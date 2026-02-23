@@ -3,6 +3,7 @@
   "version": "2.7.2",
   "description": "Ballistic calculator for Arma Reforger mortars, MLRS, and howitzers",
   "scripts": {
+    "start": "python3 -m http.server 3000",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "test:e2e": "npm run docker:up && playwright test; npm run docker:down",
