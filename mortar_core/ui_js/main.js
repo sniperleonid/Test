@@ -24,6 +24,9 @@ import { APP_VERSION } from './constants.js';
 // Keep version local to avoid import/export mismatch issues in cached clients
 const DATA_VERSION = '2.7.2';
 
+// Keep version local to avoid import/export mismatch issues in cached clients
+const DATA_VERSION = '2.7.2';
+
 let ballisticDataLoaded = false;
 
 /**
