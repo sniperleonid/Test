@@ -429,6 +429,22 @@ export function performReset() {
         }
     });
     
+    // Reset optional weather correction inputs
+    const useWeatherCorrections = getElement('useWeatherCorrections', false);
+    const useWindCorrection = getElement('useWindCorrection', false);
+    const useTemperatureCorrection = getElement('useTemperatureCorrection', false);
+    const usePressureCorrection = getElement('usePressureCorrection', false);
+
+    if (useWeatherCorrections) useWeatherCorrections.checked = false;
+    if (useWindCorrection) useWindCorrection.checked = true;
+    if (useTemperatureCorrection) useTemperatureCorrection.checked = true;
+    if (usePressureCorrection) usePressureCorrection.checked = true;
+
+    setValue('windSpeed', '0');
+    setValue('windDirection', '0');
+    setValue('temperatureC', '15');
+    setValue('pressureHPa', '1013.25');
+
     // Reset mortar type
     setValue('mortarType', 'M252');
     if (dependencies.updateShellTypes) {

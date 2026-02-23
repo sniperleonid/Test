@@ -518,7 +518,15 @@ function normalizeInput(input) {
         bearing: input.bearing,
         weaponId: input.weaponId || input.mortarId,
         ammoType: input.ammoType || input.projectileType || input.shellType,
-        chargeLevel: input.chargeLevel
+        chargeLevel: input.chargeLevel,
+        useWeatherCorrections: Boolean(input.useWeatherCorrections),
+        useWindCorrection: Boolean(input.useWindCorrection),
+        useTemperatureCorrection: Boolean(input.useTemperatureCorrection),
+        usePressureCorrection: Boolean(input.usePressureCorrection),
+        windSpeed: typeof input.windSpeed === 'number' ? input.windSpeed : 0,
+        windDirection: typeof input.windDirection === 'number' ? input.windDirection : 0,
+        temperatureC: typeof input.temperatureC === 'number' ? input.temperatureC : 15,
+        pressureHPa: typeof input.pressureHPa === 'number' ? input.pressureHPa : 1013.25
     };
 }
 
@@ -716,15 +724,27 @@ function findOptimalCharge(charges, distance) {
 function interpolateFromTable(rangeTable, distance) {
     let lower = null;
     let upper = null;
+
+    const estimateDElevFromSlope = (low, high) => {
+        if (!low || !high) return 0;
+        const rangeDelta = high.range - low.range;
+        if (rangeDelta === 0) return 0;
+        const slopePerMeter = (high.elevation - low.elevation) / rangeDelta;
+        return parseFloat(Math.max(0, -slopePerMeter * 100).toFixed(2));
+    };
     
     for (let i = 0; i < rangeTable.length; i++) {
         const entry = rangeTable[i];
         
         if (entry.range === distance) {
+            const prev = rangeTable[i - 1];
+            const next = rangeTable[i + 1];
+            const inferredDElev = estimateDElevFromSlope(prev || entry, next || entry);
+
             return {
                 elevation: entry.elevation,
                 tof: entry.tof,
-                dElev: entry.dElev,
+                dElev: entry.dElev || inferredDElev,
                 tofPer100m: entry.tofPer100m || 0
             };
         }
@@ -743,7 +763,11 @@ function interpolateFromTable(rangeTable, distance) {
     
     const elevation = lerp(distance, lower.range, upper.range, lower.elevation, upper.elevation);
     const tof = lerp(distance, lower.range, upper.range, lower.tof, upper.tof);
-    const dElev = lerp(distance, lower.range, upper.range, lower.dElev, upper.dElev);
+
+    const lowerDElev = lower.dElev || estimateDElevFromSlope(lower, upper);
+    const upperDElev = upper.dElev || estimateDElevFromSlope(lower, upper);
+    const dElev = lerp(distance, lower.range, upper.range, lowerDElev, upperDElev);
+
     const tofPer100m = lerp(distance, lower.range, upper.range, lower.tofPer100m || 0, upper.tofPer100m || 0);
     
     return {
@@ -912,6 +936,22 @@ function validateInput(input) {
     if (!normalized.ammoType || typeof normalized.ammoType !== 'string') {
         throw new Error('Missing or invalid ammoType');
     }
+
+    if (!Number.isFinite(normalized.windSpeed) || normalized.windSpeed < 0) {
+        throw new Error('Invalid wind speed: must be a non-negative number');
+    }
+
+    if (!Number.isFinite(normalized.windDirection) || normalized.windDirection < 0 || normalized.windDirection > 360) {
+        throw new Error('Invalid wind direction: must be between 0 and 360 degrees');
+    }
+
+    if (!Number.isFinite(normalized.temperatureC) || normalized.temperatureC < -80 || normalized.temperatureC > 80) {
+        throw new Error('Invalid temperature: must be between -80 and 80°C');
+    }
+
+    if (!Number.isFinite(normalized.pressureHPa) || normalized.pressureHPa < 800 || normalized.pressureHPa > 1100) {
+        throw new Error('Invalid pressure: must be between 800 and 1100 hPa');
+    }
     
     return normalized;
 }
@@ -1015,15 +1055,35 @@ function calculateForMLRS(projectile, input) {
         };
     }
     
-    // MLRS: Direct elevation (no charge, simplified height correction for now)
-    // Future: Add height correction when dElev/tofPer100m data available
-    const elevation = ballistics.elevation;
-    const tof = ballistics.tof;
+    // Apply height correction for both MLRS and howitzers when dElev data is present
+    const correctedElevation = applyHeightCorrection(
+        ballistics.elevation,
+        input.heightDifference,
+        ballistics.dElev || 0
+    );
+
+    const correctedTOF = applyTOFCorrection(
+        ballistics.tof,
+        input.heightDifference,
+        ballistics.tofPer100m || 0
+    );
+
+    const environment = applyEnvironmentCorrections(
+        correctedElevation,
+        correctedTOF,
+        input.bearing,
+        input.distance,
+        ballistics,
+        input
+    );
+
+    const elevationCorrection = (ballistics.elevation - correctedElevation) + environment.elevationCorrection;
+    const tofCorrection = (correctedTOF - ballistics.tof) + environment.tofCorrection;
     
     // Use weaponId from input for mil system conversion
     const weaponId = input.weaponId || input.mortarId;
-    const elevationDegrees = milsToDegrees(elevation, weaponId);
-    const azimuthMils = calculateAzimuthMils(input.bearing, weaponId);
+    const elevationDegrees = milsToDegrees(environment.elevation, weaponId);
+    const azimuthMils = calculateAzimuthMils(environment.azimuthDegrees, weaponId);
     
     return {
         inRange: true,
@@ -1031,19 +1091,90 @@ function calculateForMLRS(projectile, input) {
         projectileName: projectile.name,
         variant: projectile.variant,
         charge: 0,  // MLRS has no charge concept
-        elevation: Math.round(elevation),
-        elevationPrecise: parseFloat(elevation.toFixed(2)),
-        elevationCorrection: 0,  // Future enhancement
-        dElev: 0,
+        elevation: Math.round(environment.elevation),
+        elevationPrecise: parseFloat(environment.elevation.toFixed(2)),
+        elevationCorrection: parseFloat(elevationCorrection.toFixed(2)),
+        dElev: Math.round(ballistics.dElev || 0),
         elevationDegrees: parseFloat(elevationDegrees.toFixed(1)),
-        azimuth: parseFloat(input.bearing.toFixed(1)),
+        azimuth: parseFloat(environment.azimuthDegrees.toFixed(1)),
         azimuthMils: Math.round(azimuthMils),
-        timeOfFlight: parseFloat(tof.toFixed(1)),
-        tofCorrection: 0,  // Future enhancement
-        tofPer100m: 0,
+        timeOfFlight: parseFloat(environment.tof.toFixed(1)),
+        tofCorrection: parseFloat(tofCorrection.toFixed(1)),
+        tofPer100m: ballistics.tofPer100m || 0,
+        environmentCorrections: environment.details,
         minRange: projectile.minRange,
         maxRange: projectile.maxRange,
-        trajectoryType: elevation > 800 ? 'high' : 'low'
+        trajectoryType: environment.elevation > 800 ? 'high' : 'low'
+    };
+}
+
+function applyEnvironmentCorrections(baseElevation, baseTOF, baseBearing, distance, ballistics, input) {
+    const details = {
+        windElevationCorrection: 0,
+        windAzimuthCorrectionMils: 0,
+        densityElevationCorrection: 0,
+        rangeShiftMeters: 0
+    };
+
+    if (!input.useWeatherCorrections) {
+        return {
+            elevation: baseElevation,
+            tof: baseTOF,
+            azimuthDegrees: baseBearing,
+            elevationCorrection: 0,
+            tofCorrection: 0,
+            details
+        };
+    }
+
+    const dElevPerMeter = (ballistics.dElev || 0) / 100;
+    let correctedElevation = baseElevation;
+    let correctedTOF = baseTOF;
+    let azimuthMilsCorrection = 0;
+
+    // ACE-like meteo model (wind + air density from temperature/pressure)
+    if (input.useTemperatureCorrection || input.usePressureCorrection) {
+        const standardTempK = 288.15;
+        const standardPressure = 1013.25;
+        const tempK = (input.useTemperatureCorrection ? input.temperatureC : 15) + 273.15;
+        const pressure = input.usePressureCorrection ? input.pressureHPa : standardPressure;
+        const densityRatio = (pressure / standardPressure) * (standardTempK / tempK);
+        const rangeShift = distance * ((1 / densityRatio) - 1) * 0.12;
+        const densityCorrection = -rangeShift * dElevPerMeter;
+
+        correctedElevation += densityCorrection;
+        details.densityElevationCorrection = densityCorrection;
+        details.rangeShiftMeters += rangeShift;
+    }
+
+    if (input.useWindCorrection && input.windSpeed > 0) {
+        const relativeWindDeg = ((input.windDirection - baseBearing) + 360) % 360;
+        const relativeWindRad = (relativeWindDeg * Math.PI) / 180;
+        const headWind = input.windSpeed * Math.cos(relativeWindRad);
+        const crossWind = input.windSpeed * Math.sin(relativeWindRad);
+
+        const windRangeShift = headWind * baseTOF * 1.5;
+        const windElevationCorrection = -windRangeShift * dElevPerMeter;
+        correctedElevation += windElevationCorrection;
+        details.windElevationCorrection = windElevationCorrection;
+        details.rangeShiftMeters += windRangeShift;
+
+        const crossDriftMeters = crossWind * baseTOF * 0.7;
+        const crossDriftAngleRad = Math.atan2(crossDriftMeters, Math.max(distance, 1));
+        azimuthMilsCorrection = -(crossDriftAngleRad * (6400 / (2 * Math.PI)));
+        details.windAzimuthCorrectionMils = azimuthMilsCorrection;
+    }
+
+    const weaponId = input.weaponId || input.mortarId;
+    const correctedAzimuthDegrees = baseBearing + milsToDegrees(azimuthMilsCorrection, weaponId);
+
+    return {
+        elevation: correctedElevation,
+        tof: correctedTOF,
+        azimuthDegrees: ((correctedAzimuthDegrees % 360) + 360) % 360,
+        elevationCorrection: details.windElevationCorrection + details.densityElevationCorrection,
+        tofCorrection: 0,
+        details
     };
 }
 

@@ -29,6 +29,21 @@ let dependencies = {
 // This prevents multiple overlapping setTimeout calls when calculations happen in quick succession
 let pendingListenerSetupTimeout = null;
 
+
+function getWeatherCorrectionInput() {
+    return {
+        useWeatherCorrections: isChecked('useWeatherCorrections'),
+        useWindCorrection: isChecked('useWindCorrection'),
+        useTemperatureCorrection: isChecked('useTemperatureCorrection'),
+        usePressureCorrection: isChecked('usePressureCorrection'),
+        windSpeed: parseFloat(getValue('windSpeed')) || 0,
+        windDirection: parseFloat(getValue('windDirection')) || 0,
+        temperatureC: parseFloat(getValue('temperatureC')) || 15,
+        pressureHPa: parseFloat(getValue('pressureHPa')) || 1013.25
+    };
+}
+
+
 /**
  * Initialize calculator with dependencies
  * @param {Object} deps - Dependency injection container
@@ -180,6 +195,11 @@ export function generateSolutionGridHTML(solution, previousChargeForDisplay) {
         // Fallback to mortar
     }
     
+    const env = solution.environmentCorrections;
+    const environmentHTML = env && input.useWeatherCorrections
+        ? `<div style="margin-top: 6px; color: ${COLORS.textMuted};">🌦️ ACE: ΔEl wind ${env.windElevationCorrection >= 0 ? '+' : ''}${env.windElevationCorrection.toFixed(1)} mil, ΔAz wind ${env.windAzimuthCorrectionMils >= 0 ? '+' : ''}${env.windAzimuthCorrectionMils.toFixed(1)} mil, ΔEl meteo ${env.densityElevationCorrection >= 0 ? '+' : ''}${env.densityElevationCorrection.toFixed(1)} mil</div>`
+        : '';
+
     // Generate correction comparison if applied
     let correctionComparisonHTML = '';
     if (State.isCorrectionApplied() && State.getOriginalTargetPos()) {
@@ -188,7 +208,7 @@ export function generateSolutionGridHTML(solution, previousChargeForDisplay) {
         const weaponPos = dependencies.parsePositionFromUI('mortar');
         const origPos = State.getOriginalTargetPos();
         const originalMeters = origPos.meters || origPos;
-        const originalInput = BallisticCalculator.prepareInput(weaponPos, originalMeters, mortarId, shellType);
+        const originalInput = { ...BallisticCalculator.prepareInput(weaponPos, originalMeters, mortarId, shellType), ...getWeatherCorrectionInput() };
         originalInput.chargeLevel = solution.charge;
         const originalSolutions = BallisticCalculator.calculateAllTrajectories(originalInput);
         
@@ -263,6 +283,7 @@ export function generateSolutionGridHTML(solution, previousChargeForDisplay) {
                 <strong>⛰️ Alt Diff:</strong> ${input.heightDifference > 0 ? '+' : ''}${input.heightDifference.toFixed(1)}m
             </div>
             ${systemType === 'mortar' ? `<strong>Charge Range:</strong> ${solution.minRange}m - ${solution.maxRange}m` : `<strong>Projectile Range:</strong> ${solution.minRange}m - ${solution.maxRange}m`}
+            ${environmentHTML}
         </div>
         ${correctionComparisonHTML}
     `;
@@ -591,7 +612,7 @@ export async function calculateSolution() {
             }
             
             const ffeSolutions = [];
-            const centerInput = BallisticCalculator.prepareInput(weaponPos, targetParsed, mortarId, shellType);
+            const centerInput = { ...BallisticCalculator.prepareInput(weaponPos, targetParsed, mortarId, shellType), ...getWeatherCorrectionInput() };
             const centerSolutions = BallisticCalculator.calculateAllTrajectories(centerInput);
             
             if (centerSolutions.length === 0 || !centerSolutions[0].inRange) {
@@ -601,7 +622,7 @@ export async function calculateSolution() {
             const ffeCharge = centerSolutions[0].charge;
             
             targetPositions.forEach((pos, index) => {
-                const input = BallisticCalculator.prepareInput(weaponPos, pos, mortarId, shellType);
+                const input = { ...BallisticCalculator.prepareInput(weaponPos, pos, mortarId, shellType), ...getWeatherCorrectionInput() };
                 input.chargeLevel = ffeCharge;
                 const solutions = BallisticCalculator.calculateAllTrajectories(input);
                 if (solutions.length > 0 && solutions[0].inRange) {
@@ -673,7 +694,7 @@ export async function calculateSolution() {
         }
         
         // Normal calculation mode
-        const input = BallisticCalculator.prepareInput(weaponPos, targetPos, mortarId, shellType);
+        const input = { ...BallisticCalculator.prepareInput(weaponPos, targetPos, mortarId, shellType), ...getWeatherCorrectionInput() };
         let solutions = BallisticCalculator.calculateAllTrajectories(input);
         
         if (State.isCorrectionApplied() && State.getSelectedCharge() !== undefined && solutions.length > 0) {
