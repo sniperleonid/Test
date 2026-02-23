@@ -16,7 +16,22 @@ Ballistic calculation engine for Arma Reforger mortar and MLRS weapon systems.
 
 ## Web Calculator
 
-Visit **[armamortars.org](https://armamortars.org)** for the online calculator, or open [index.html](index.html) locally.
+Visit **[armamortars.org](https://armamortars.org)** for the online calculator.
+
+If you want to run it locally, start the built-in cross-platform server and open `http://localhost:3000`:
+
+```bash
+cd mortar_core
+npm run start
+```
+
+From repository root you can use:
+
+```bash
+npm --prefix mortar_core run start
+```
+
+> Do not open `index.html` via `file://` directly: the browser blocks local JSON loading in that mode.
 
 ## 🚀 Features
 - ✅ **Pure JavaScript** - No external dependencies
