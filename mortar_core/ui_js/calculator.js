@@ -45,7 +45,7 @@ function getWeatherCorrectionInput() {
 
 function getFiringModeInput() {
     return {
-        fireMode: getValue('fireMode') || 'auto',
+        fireMode: 'auto',
         trajectoryPreference: getValue('trajectoryPreference') || 'auto'
     };
 }
