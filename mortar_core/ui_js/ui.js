@@ -26,6 +26,31 @@ let dependencies = {
 // Debounced validation functions (created in initUI, accessible module-wide)
 let debouncedValidateCoordinateRange = null;
 let debouncedValidateGridFormat = null;
+let debouncedAutoRecalculate = null;
+
+function toggleMortarPositionLock(isLocked) {
+    const mortarPositionFields = ['mortarGridX', 'mortarGridY', 'mortarX', 'mortarY', 'mortarZ'];
+
+    mortarPositionFields.forEach(id => {
+        const el = getElement(id, false);
+        if (!el) return;
+        el.disabled = isLocked;
+        el.style.opacity = isLocked ? '0.7' : '1';
+        el.style.cursor = isLocked ? 'not-allowed' : '';
+    });
+}
+
+function autoRecalculateIfPossible() {
+    if (!dependencies.calculateSolution || State.isLoadingFromHistory() || State.isLoadingFromSharedSession()) {
+        return;
+    }
+
+    if (!State.getLastSolution() || !isFormValid(true)) {
+        return;
+    }
+
+    dependencies.calculateSolution();
+}
 
 /**
  * Initialize UI with dependencies
@@ -445,6 +470,12 @@ export function performReset() {
     setValue('temperatureC', '15');
     setValue('pressureHPa', '1013.25');
 
+    const lockMortarPosition = getElement('lockMortarPosition', false);
+    if (lockMortarPosition) {
+        lockMortarPosition.checked = false;
+    }
+    toggleMortarPositionLock(false);
+
     // Reset mortar type
     setValue('mortarType', 'M252');
     if (dependencies.updateShellTypes) {
@@ -504,6 +535,7 @@ export function setCoordMode(mode) {
                 el._validationHandler = (e) => {
                     clearTargetCorrectionState(el, id);
                     debouncedValidateCoordinateRange(el);
+                    debouncedAutoRecalculate();
                 };
                 el.addEventListener('input', el._validationHandler);
             }
@@ -720,6 +752,7 @@ export function initUI() {
     
     debouncedValidateCoordinateRange = debounce(validateCoordinateRange, 500);
     debouncedValidateGridFormat = debounce(validateGridFormat, 300);
+    debouncedAutoRecalculate = debounce(autoRecalculateIfPossible, 300);
     
     ['mortarX', 'mortarY', 'mortarZ', 'targetX', 'targetY', 'targetZ'].forEach(id => {
         const el = getElement(id, false);
@@ -728,6 +761,7 @@ export function initUI() {
                 clearTargetCorrectionState(el, id);
                 updateCalculateButtonState();
                 debouncedValidateCoordinateRange(el);
+                debouncedAutoRecalculate();
             });
         }
     });
@@ -780,11 +814,23 @@ export function initUI() {
                 if (id.startsWith('mortar') || id.startsWith('target')) {
                     updateCalculateButtonState();
                     debouncedValidateCoordinateRange(el);
+                    debouncedAutoRecalculate();
                 }
             });
         }
     });
     
+    ['useWeatherCorrections', 'useWindCorrection', 'useTemperatureCorrection', 'usePressureCorrection', 'windSpeed', 'windDirection', 'temperatureC', 'pressureHPa'].forEach(id => {
+        const el = getElement(id, false);
+        if (!el) return;
+
+        ['input', 'change'].forEach(eventName => {
+            el.addEventListener(eventName, () => {
+                debouncedAutoRecalculate();
+            });
+        });
+    });
+
     // Event delegation for keypress validation
     document.addEventListener('keypress', (e) => {
         if (e.target.id === 'observerGridX' || e.target.id === 'observerGridY') {
@@ -851,6 +897,14 @@ function setupUIListeners() {
     const clearHistoryBtn = getElement('clearHistoryBtn', false);
     if (clearHistoryBtn && dependencies.clearHistory) {
         clearHistoryBtn.addEventListener('click', dependencies.clearHistory);
+    }
+
+    const lockMortarPosition = getElement('lockMortarPosition', false);
+    if (lockMortarPosition) {
+        toggleMortarPositionLock(lockMortarPosition.checked);
+        lockMortarPosition.addEventListener('change', (e) => {
+            toggleMortarPositionLock(e.target.checked);
+        });
     }
     
     // MLRS rocket suggestion handlers
