@@ -540,26 +540,16 @@ async function loadBallisticData(dataSource) {
     } else {
         // Browser environment
         const response = await fetch(dataSource);
+
+        if (!response.ok) {
+            throw new Error(`Failed to load ballistic data (${response.status} ${response.statusText}) from ${dataSource}`);
+        }
+
         rawData = await response.json();
     }
     
     ballisticData = normalizeBallisticData(rawData);
     return ballisticData;
-}
-
-/**
- * Get weapon configuration (unified for mortars and MLRS)
-        return ballisticData;
-    }
-    
-    // Browser environment
-    if (typeof fetch !== 'undefined') {
-        const response = await fetch(dataSource);
-        ballisticData = await response.json();
-        return ballisticData;
-    }
-    
-    throw new Error('No method available to load ballistic data');
 }
 
 /**
