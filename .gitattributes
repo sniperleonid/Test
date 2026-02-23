@@ -1,0 +1,7 @@
+# Reduce rebase/merge conflicts for generated artifacts.
+# These files are regenerated from source data and frequently cause noisy conflicts.
+mortar_core/ballistic-data.json merge=ours
+mortar_core/package-lock.json merge=ours
+
+# Keep line endings stable
+* text=auto

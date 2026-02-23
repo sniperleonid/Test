@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "source": "Arma Reforger Official Data",
-  "lastUpdated": "2026-01-08T07:51:25.545746Z",
+  "lastUpdated": "2026-02-23T09:47:06.662469+00:00",
   "weaponSystems": [
     {
       "id": "2B14",
@@ -3316,6 +3316,900 @@
           ]
         }
       ]
+    },
+    {
+      "systemType": "howitzer",
+      "id": "M777",
+      "name": "M777 155mm Howitzer",
+      "caliber": 155,
+      "milSystem": {
+        "name": "NATO",
+        "milsPerCircle": 6400,
+        "milsPerDegree": 17.7778
+      },
+      "projectileTypes": [
+        {
+          "id": "m777_m107_charge1_direct",
+          "name": "M777 M107 HE (Charge 1, Direct)",
+          "type": "HE",
+          "variant": "direct_fire",
+          "charge": 1,
+          "minRange": 100,
+          "maxRange": 699,
+          "ballisticTable": [
+            {
+              "range": 100,
+              "elevation": 26,
+              "tof": 0.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 150,
+              "elevation": 38,
+              "tof": 1.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 250,
+              "elevation": 64,
+              "tof": 1.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 300,
+              "elevation": 77,
+              "tof": 2.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 350,
+              "elevation": 90,
+              "tof": 2.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 450,
+              "elevation": 116,
+              "tof": 3.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 500,
+              "elevation": 129,
+              "tof": 3.6,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 550,
+              "elevation": 142,
+              "tof": 4.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 650,
+              "elevation": 169,
+              "tof": 4.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 700,
+              "elevation": 182,
+              "tof": 5.1,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge1_indirect",
+          "name": "M777 M107 HE (Charge 1, Indirect)",
+          "type": "HE",
+          "variant": "indirect_fire",
+          "charge": 1,
+          "minRange": 500,
+          "maxRange": 1838,
+          "ballisticTable": [
+            {
+              "range": 500,
+              "elevation": 1471,
+              "tof": 28.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 600,
+              "elevation": 1445,
+              "tof": 28.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 700,
+              "elevation": 1418,
+              "tof": 28.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 900,
+              "elevation": 1362,
+              "tof": 27.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1000,
+              "elevation": 1333,
+              "tof": 27.6,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1100,
+              "elevation": 1303,
+              "tof": 27.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1200,
+              "elevation": 1272,
+              "tof": 27.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1400,
+              "elevation": 1205,
+              "tof": 26.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1500,
+              "elevation": 1167,
+              "tof": 26.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1600,
+              "elevation": 1127,
+              "tof": 25.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1700,
+              "elevation": 1082,
+              "tof": 24.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1800,
+              "elevation": 1029,
+              "tof": 24.2,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge2_direct",
+          "name": "M777 M107 HE (Charge 2, Direct)",
+          "type": "HE",
+          "variant": "direct_fire",
+          "charge": 2,
+          "minRange": 100,
+          "maxRange": 1492,
+          "ballisticTable": [
+            {
+              "range": 100,
+              "elevation": 12,
+              "tof": 0.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 250,
+              "elevation": 30,
+              "tof": 1.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 400,
+              "elevation": 48,
+              "tof": 2.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 550,
+              "elevation": 66,
+              "tof": 2.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 700,
+              "elevation": 84,
+              "tof": 3.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 850,
+              "elevation": 102,
+              "tof": 4.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1050,
+              "elevation": 127,
+              "tof": 5.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1200,
+              "elevation": 145,
+              "tof": 5.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1350,
+              "elevation": 164,
+              "tof": 6.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1500,
+              "elevation": 183,
+              "tof": 7.5,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge2_indirect",
+          "name": "M777 M107 HE (Charge 2, Indirect)",
+          "type": "HE",
+          "variant": "indirect_fire",
+          "charge": 2,
+          "minRange": 500,
+          "maxRange": 3921,
+          "ballisticTable": [
+            {
+              "range": 500,
+              "elevation": 1540,
+              "tof": 41.6,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 800,
+              "elevation": 1504,
+              "tof": 41.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1100,
+              "elevation": 1467,
+              "tof": 41.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1400,
+              "elevation": 1430,
+              "tof": 41.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1700,
+              "elevation": 1391,
+              "tof": 40.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2100,
+              "elevation": 1338,
+              "tof": 40.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2400,
+              "elevation": 1295,
+              "tof": 39.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2700,
+              "elevation": 1251,
+              "tof": 39.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3000,
+              "elevation": 1202,
+              "tof": 38.6,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3300,
+              "elevation": 1149,
+              "tof": 37.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3600,
+              "elevation": 1088,
+              "tof": 36.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3900,
+              "elevation": 1012,
+              "tof": 34.9,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge3_direct",
+          "name": "M777 M107 HE (Charge 3, Direct)",
+          "type": "HE",
+          "variant": "direct_fire",
+          "charge": 3,
+          "minRange": 100,
+          "maxRange": 2777,
+          "ballisticTable": [
+            {
+              "range": 100,
+              "elevation": 6,
+              "tof": 0.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 400,
+              "elevation": 26,
+              "tof": 1.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 700,
+              "elevation": 45,
+              "tof": 2.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1000,
+              "elevation": 64,
+              "tof": 3.6,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1300,
+              "elevation": 84,
+              "tof": 4.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1600,
+              "elevation": 103,
+              "tof": 5.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1900,
+              "elevation": 123,
+              "tof": 6.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2200,
+              "elevation": 143,
+              "tof": 8.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2500,
+              "elevation": 163,
+              "tof": 9.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2800,
+              "elevation": 184,
+              "tof": 10.2,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge3_indirect",
+          "name": "M777 M107 HE (Charge 3, Indirect)",
+          "type": "HE",
+          "variant": "indirect_fire",
+          "charge": 3,
+          "minRange": 500,
+          "maxRange": 7300,
+          "ballisticTable": [
+            {
+              "range": 500,
+              "elevation": 1568,
+              "tof": 56.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1100,
+              "elevation": 1529,
+              "tof": 56.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1700,
+              "elevation": 1490,
+              "tof": 56.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2400,
+              "elevation": 1444,
+              "tof": 56.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3000,
+              "elevation": 1403,
+              "tof": 55.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3600,
+              "elevation": 1360,
+              "tof": 55.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 4200,
+              "elevation": 1316,
+              "tof": 54.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 4800,
+              "elevation": 1269,
+              "tof": 53.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 5400,
+              "elevation": 1219,
+              "tof": 52.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 6100,
+              "elevation": 1153,
+              "tof": 51.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 6700,
+              "elevation": 1088,
+              "tof": 49.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 7300,
+              "elevation": 1005,
+              "tof": 47.5,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge4_direct",
+          "name": "M777 M107 HE (Charge 4, Direct)",
+          "type": "HE",
+          "variant": "direct_fire",
+          "charge": 4,
+          "minRange": 100,
+          "maxRange": 4458,
+          "ballisticTable": [
+            {
+              "range": 100,
+              "elevation": 4,
+              "tof": 0.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 600,
+              "elevation": 24,
+              "tof": 1.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1050,
+              "elevation": 42,
+              "tof": 3.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1550,
+              "elevation": 62,
+              "tof": 4.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2050,
+              "elevation": 82,
+              "tof": 5.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2500,
+              "elevation": 101,
+              "tof": 7.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3000,
+              "elevation": 121,
+              "tof": 8.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3500,
+              "elevation": 142,
+              "tof": 10.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3950,
+              "elevation": 161,
+              "tof": 11.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 4450,
+              "elevation": 182,
+              "tof": 12.8,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge4_indirect",
+          "name": "M777 M107 HE (Charge 4, Indirect)",
+          "type": "HE",
+          "variant": "indirect_fire",
+          "charge": 4,
+          "minRange": 500,
+          "maxRange": 11719,
+          "ballisticTable": [
+            {
+              "range": 500,
+              "elevation": 1580,
+              "tof": 72.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1500,
+              "elevation": 1540,
+              "tof": 71.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2500,
+              "elevation": 1499,
+              "tof": 71.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3600,
+              "elevation": 1454,
+              "tof": 71.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 4600,
+              "elevation": 1412,
+              "tof": 70.8,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 5600,
+              "elevation": 1368,
+              "tof": 70.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 6600,
+              "elevation": 1323,
+              "tof": 69.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 7600,
+              "elevation": 1274,
+              "tof": 68.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 8700,
+              "elevation": 1217,
+              "tof": 67.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 9700,
+              "elevation": 1159,
+              "tof": 65.4,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 10700,
+              "elevation": 1092,
+              "tof": 63.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 11700,
+              "elevation": 1007,
+              "tof": 60.2,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge5_direct",
+          "name": "M777 M107 HE (Charge 5, Direct)",
+          "type": "HE",
+          "variant": "direct_fire",
+          "charge": 5,
+          "minRange": 100,
+          "maxRange": 6500,
+          "ballisticTable": [
+            {
+              "range": 100,
+              "elevation": 3,
+              "tof": 0.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 800,
+              "elevation": 22,
+              "tof": 1.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 1500,
+              "elevation": 41,
+              "tof": 3.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2250,
+              "elevation": 62,
+              "tof": 5.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2950,
+              "elevation": 81,
+              "tof": 6.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3650,
+              "elevation": 100,
+              "tof": 8.6,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 4350,
+              "elevation": 120,
+              "tof": 10.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 5100,
+              "elevation": 141,
+              "tof": 12.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 5800,
+              "elevation": 161,
+              "tof": 13.7,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 6500,
+              "elevation": 181,
+              "tof": 15.4,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        },
+        {
+          "id": "m777_m107_charge5_indirect",
+          "name": "M777 M107 HE (Charge 5, Indirect)",
+          "type": "HE",
+          "variant": "indirect_fire",
+          "charge": 5,
+          "minRange": 500,
+          "maxRange": 17000,
+          "ballisticTable": [
+            {
+              "range": 500,
+              "elevation": 1586,
+              "tof": 87.3,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 2000,
+              "elevation": 1545,
+              "tof": 87.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 3500,
+              "elevation": 1504,
+              "tof": 86.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 5000,
+              "elevation": 1462,
+              "tof": 86.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 6500,
+              "elevation": 1419,
+              "tof": 85.9,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 8000,
+              "elevation": 1375,
+              "tof": 85.1,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 9500,
+              "elevation": 1328,
+              "tof": 84.2,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 11000,
+              "elevation": 1279,
+              "tof": 83.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 12500,
+              "elevation": 1226,
+              "tof": 81.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 14000,
+              "elevation": 1168,
+              "tof": 79.5,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 15500,
+              "elevation": 1101,
+              "tof": 77.0,
+              "dElev": null,
+              "tofPer100m": null
+            },
+            {
+              "range": 17000,
+              "elevation": 1017,
+              "tof": 73.4,
+              "dElev": null,
+              "tofPer100m": null
+            }
+          ]
+        }
+      ],
+      "notes": "M107 shell model using provided init speed coefficients [1.4, 2.045, 2.79, 3.535, 4.28]; includes direct and indirect ballistic tables for each charge."
     },
     {
       "systemType": "mlrs",

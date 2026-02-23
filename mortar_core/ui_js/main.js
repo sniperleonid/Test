@@ -20,6 +20,9 @@ import { setDisplay, populateSelect } from './utils.js';
 import * as DOMCache from './dom-cache.js';
 import * as CoordManager from './coord-manager.js';
 
+// Keep version local to avoid import/export mismatch issues in cached clients
+const DATA_VERSION = '2.7.2';
+
 let ballisticDataLoaded = false;
 
 /**
@@ -133,7 +136,12 @@ async function init() {
     const app = DOMCache.getElement('app');
     
     try {
-        await BallisticCalculator.loadBallisticData('ballistic-data.json');
+        try {
+            await BallisticCalculator.loadBallisticData(`ballistic-data.json?v=${DATA_VERSION}`);
+        } catch (versionedError) {
+            console.warn('Versioned ballistic data fetch failed, retrying plain path:', versionedError.message);
+            await BallisticCalculator.loadBallisticData('ballistic-data.json');
+        }
         ballisticDataLoaded = true;
         State.setBallisticDataLoaded(true);
         
