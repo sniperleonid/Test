@@ -1154,7 +1154,7 @@ function calculateForMLRS(projectile, input) {
         projectileId: projectile.id,
         projectileName: projectile.name,
         variant: projectile.variant,
-        charge: 0,  // MLRS has no charge concept
+        charge: projectile.charge ?? 0,
         elevation: Math.round(safeElevation),
         elevationPrecise: parseFloat(safeElevation.toFixed(2)),
         elevationCorrection: parseFloat(elevationCorrection.toFixed(2)),
