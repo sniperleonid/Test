@@ -46,10 +46,21 @@ function getWeatherCorrectionInput() {
 function getFiringModeInput() {
     return {
         fireMode: 'auto',
-        trajectoryPreference: getValue('trajectoryPreference') || 'auto'
+        trajectoryPreference: 'auto'
     };
 }
 
+
+
+function getHowitzerTrajectoryLabel(solution) {
+    if (solution.variant === 'direct_fire') return 'Direct fire';
+    if (solution.variant === 'indirect_fire') return 'Indirect fire';
+    if (solution.variant === 'high_angle') return 'High angle';
+    if (solution.variant === 'low_angle') return 'Low angle';
+    if (solution.trajectoryType === 'high') return 'High trajectory';
+    if (solution.trajectoryType === 'low') return 'Low trajectory';
+    return 'Standard';
+}
 
 /**
  * Initialize calculator with dependencies
@@ -265,6 +276,16 @@ export function generateSolutionGridHTML(solution, previousChargeForDisplay) {
                 <strong>CHARGE</strong>
                 <div class="value" ${chargeChanged ? `style="color: ${COLORS.errorText}"` : ''}>${solution.charge}</div>
                 ${chargeChanged ? `<div style="color: ${COLORS.errorText}; font-size: 11px; margin-top: 2px;">was: ${previousChargeForDisplay}</div>` : ''}
+            </div>
+            ` : ''}
+            ${systemType === 'howitzer' ? `
+            <div class="solution-item">
+                <strong>PROPELLANT CHARGE</strong>
+                <div class="value">${solution.charge}</div>
+            </div>
+            <div class="solution-item">
+                <strong>TRAJECTORY</strong>
+                <div class="value">${getHowitzerTrajectoryLabel(solution)}</div>
             </div>
             ` : ''}
             <div class="solution-item">

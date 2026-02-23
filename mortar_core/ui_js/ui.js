@@ -469,7 +469,6 @@ export function performReset() {
     setValue('windDirection', '0');
     setValue('temperatureC', '15');
     setValue('pressureHPa', '1013.25');
-    setValue('trajectoryPreference', 'auto');
 
     const lockMortarPosition = getElement('lockMortarPosition', false);
     if (lockMortarPosition) {
@@ -821,7 +820,7 @@ export function initUI() {
         }
     });
     
-    ['useWeatherCorrections', 'useWindCorrection', 'useTemperatureCorrection', 'usePressureCorrection', 'windSpeed', 'windDirection', 'temperatureC', 'pressureHPa', 'trajectoryPreference'].forEach(id => {
+    ['useWeatherCorrections', 'useWindCorrection', 'useTemperatureCorrection', 'usePressureCorrection', 'windSpeed', 'windDirection', 'temperatureC', 'pressureHPa'].forEach(id => {
         const el = getElement(id, false);
         if (!el) return;
 
