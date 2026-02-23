@@ -927,6 +927,8 @@ Convert Arma Reforger grid coordinates to meter coordinates.
   - Converts to the center of the square (4750m, 6950m)
 - **4-digit format:** `"0475/0695"` or `"0475,0695"` represents exact 10m precision
   - Converts to exact position (4750m, 6950m)
+- **5-digit format:** `"04755/06958"` or `"04755,06958"` represents exact 1m precision
+  - Converts to exact position (4755m, 6958m)
 - **Delimiters:** Accepts both `/` (slash) and `,` (comma) as separators
 
 **Example:**
@@ -1010,6 +1012,7 @@ Convert 3D positions or grid coordinates into calculator input.
 **Grid String Format:**
 - 3-digit format: `"047/069"` - 100m precision (center of square)
 - 4-digit format: `"0475/0695"` - 10m precision
+- 5-digit format: `"04755/06958"` - 1m precision
 
 **Returns:**
 - `CalculatorInput` - Ready for `calculate()`
@@ -1338,8 +1341,8 @@ function calculateFromMap(map, mortarMarker, targetMarker) {
 
 | Field | Validation | Error Message |
 |-------|------------|---------------|
-| Grid X/Y | Format | "3 or 4 digits (e.g., 058, 0584)" |
-| Grid coordinates | Parsing | "Grid coordinates must be 3 or 4 digits each (e.g., 058/071, 0584/0713)" |
+| Grid X/Y | Format | "3, 4 or 5 digits (e.g., 058, 0584, 05845)" |
+| Grid coordinates | Parsing | "Grid coordinates must be 3, 4, or 5 digits each (e.g., 058/071, 0584/0713, 05845/07132)" |
 | Meters X/Y | Range | "Value must be between 0 and 99999.9" |
 | Left/Right correction | Range | Valid range: -500 to +500 meters |
 | Add/Drop correction | Range | Valid range: -500 to +500 meters |

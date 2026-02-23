@@ -4,6 +4,7 @@
  * Version: 1.8.0
  */
 
+
 // Input field ID mappings
 export const INPUT_IDS = {
     MORTAR_FIELDS: ['mortarGridX', 'mortarGridY', 'mortarX', 'mortarY', 'mortarZ'],

@@ -726,14 +726,14 @@
                         <div class="row">
                             <div class="form-group">
                                 <label for="mortarGridX">Grid X Coordinate</label>
-                                <input type="text" id="mortarGridX" placeholder="047 or 0475" maxlength="4" inputmode="numeric" pattern="[0-9]*">
+                                <input type="text" id="mortarGridX" placeholder="047, 0475 or 04755" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                             <div class="form-group">
                                 <label for="mortarGridY">Grid Y Coordinate</label>
-                                <input type="text" id="mortarGridY" placeholder="069 or 0695" maxlength="4" inputmode="numeric" pattern="[0-9]*">
+                                <input type="text" id="mortarGridY" placeholder="069, 0695 or 06955" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                         </div>
-                        <small style="color: #999; display: block; margin-top: -15px;">3-digit (100m squares) or 4-digit (10m precision)</small>
+                        <small style="color: #999; display: block; margin-top: -15px;">3-digit (100m squares), 4-digit (10m), or 5-digit (1m precision)</small>
                     </div>
                 </div>
                 
@@ -767,14 +767,14 @@
                         <div class="row">
                             <div class="form-group">
                                 <label for="targetGridX">Grid X Coordinate</label>
-                                <input type="text" id="targetGridX" placeholder="085 or 0850" maxlength="4" inputmode="numeric" pattern="[0-9]*">
+                                <input type="text" id="targetGridX" placeholder="085, 0850 or 08500" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                             <div class="form-group">
                                 <label for="targetGridY">Grid Y Coordinate</label>
-                                <input type="text" id="targetGridY" placeholder="105 or 1050" maxlength="4" inputmode="numeric" pattern="[0-9]*">
+                                <input type="text" id="targetGridY" placeholder="105, 1050 or 10500" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                         </div>
-                        <small style="color: #999; display: block; margin-top: -15px;">3-digit (100m squares) or 4-digit (10m precision)</small>
+                        <small style="color: #999; display: block; margin-top: -15px;">3-digit (100m squares), 4-digit (10m), or 5-digit (1m precision)</small>
                     </div>
                 </div>
                 
@@ -920,11 +920,11 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
                             <div>
                                 <label class="observer-label">FO Grid X</label>
-                                <input type="text" id="observerGridX" placeholder="060" maxlength="4" inputmode="numeric" pattern="[0-9]*" class="observer-input observer-input-grid" onkeydown="if(event.key === 'Enter') event.preventDefault();">
+                                <input type="text" id="observerGridX" placeholder="060 / 0605 / 06050" maxlength="5" inputmode="numeric" pattern="[0-9]*" class="observer-input observer-input-grid" onkeydown="if(event.key === 'Enter') event.preventDefault();">
                             </div>
                             <div>
                                 <label class="observer-label">FO Grid Y</label>
-                                <input type="text" id="observerGridY" placeholder="080" maxlength="4" inputmode="numeric" pattern="[0-9]*" class="observer-input observer-input-grid" onkeydown="if(event.key === 'Enter') event.preventDefault();">
+                                <input type="text" id="observerGridY" placeholder="080 / 0805 / 08050" maxlength="5" inputmode="numeric" pattern="[0-9]*" class="observer-input observer-input-grid" onkeydown="if(event.key === 'Enter') event.preventDefault();">
                             </div>
                         </div>
                     </div>
@@ -1037,7 +1037,7 @@
                 🐛 Report Bug
             </a>
         </p>
-        <p style="margin: 10px 0;">© 2026 ArmaMortars.org | OpenSource Arma Reforger Ballistic Calculator v2.7.0</p>
+        <p style="margin: 10px 0;">© 2026 ArmaMortars.org | OpenSource Arma Reforger Ballistic Calculator v2.7.2</p>
         <p style="margin: 10px 0;">
             <a href="https://github.com/GeNeFRAG/ArmaReforger/tree/main/mortar_core/" target="_blank" rel="noopener noreferrer" style="color: #8fbc1e; text-decoration: none;">⭐ View on GitHub</a>
             | 
@@ -1048,7 +1048,7 @@
         </p>
     </footer>
     
-    <script src="BallisticCalculator.js?v=2.7.0"></script>
-    <script type="module" src="ui_js/main.js"></script>
+    <script src="BallisticCalculator.js?v=2.7.2"></script>
+    <script type="module" src="ui_js/main.js?v=2.7.2"></script>
 </body>
 </html>
