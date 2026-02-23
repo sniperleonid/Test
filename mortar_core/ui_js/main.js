@@ -81,11 +81,11 @@ function wireDependencies() {
  * Setup share feature event listeners
  */
 function setupShareListeners() {
-    const shareBtn = DOMCache.getElement('shareBtn');
-    const closeModalBtn = DOMCache.getElement('closeShareModalBtn');
+    const shareBtn = DOMCache.getElement('shareBtn', false);
+    const closeModalBtn = DOMCache.getElement('closeShareModalBtn', false);
     const closeModalBtn2 = document.getElementById('closeShareModalBtn2');
-    const copyURLBtn = DOMCache.getElement('copyURLBtn');
-    const loadPasteBtn = DOMCache.getElement('loadPasteBtn');
+    const copyURLBtn = DOMCache.getElement('copyURLBtn', false);
+    const loadPasteBtn = DOMCache.getElement('loadPasteBtn', false);
     
     if (shareBtn) {
         shareBtn.addEventListener('click', () => {
@@ -118,7 +118,7 @@ function setupShareListeners() {
     }
     
     // Close modal when clicking outside
-    const shareModal = DOMCache.getElement('shareModal');
+    const shareModal = DOMCache.getElement('shareModal', false);
     if (shareModal) {
         shareModal.addEventListener('click', (e) => {
             if (e.target === shareModal) {
