@@ -120,8 +120,8 @@ function calculateBearing(pos1, pos2) {
 
 /**
  * Parse grid coordinate string to meters
- * Supports both 3-digit (100m precision) and 4-digit (10m precision) formats
- * @param {string} gridString - Grid coordinate (e.g., "058/071", "058,071", "0584/0713", or "0584,0713")
+ * Supports 3-digit (100m), 4-digit (10m), and 5-digit (1m) formats
+ * @param {string} gridString - Grid coordinate (e.g., "058/071", "0584/0713", "05845/07132")
  * @returns {Object} Object with x and y in meters
  * @throws {Error} If format is invalid
  */
@@ -135,11 +135,11 @@ function parseGridToMeters(gridString) {
     } else if (cleaned.includes(',')) {
         parts = cleaned.split(',');
     } else {
-        throw new Error('Invalid grid format. Use: 058/071, 058,071, 0584/0713, or 0584,0713');
+        throw new Error('Invalid grid format. Use: 058/071, 0584/0713, or 05845/07132 (also comma variants)');
     }
     
     if (parts.length !== 2) {
-        throw new Error('Invalid grid format. Use: 058/071, 058,071, 0584/0713, or 0584,0713');
+        throw new Error('Invalid grid format. Use: 058/071, 0584/0713, or 05845/07132 (also comma variants)');
     }
     
     const gridX = parts[0];
@@ -155,8 +155,13 @@ function parseGridToMeters(gridString) {
             x: parseInt(gridX, 10) * 10,
             y: parseInt(gridY, 10) * 10
         };
+    } else if (gridX.length === 5 && gridY.length === 5) {
+        return {
+            x: parseInt(gridX, 10),
+            y: parseInt(gridY, 10)
+        };
     } else {
-        throw new Error('Grid coordinates must be 3 or 4 digits each (e.g., 058/071, 058,071, 0584/0713, or 0584,0713)');
+        throw new Error('Grid coordinates must be 3, 4, or 5 digits each (e.g., 058/071, 0584/0713, 05845/07132)');
     }
 }
 
@@ -164,19 +169,30 @@ function parseGridToMeters(gridString) {
  * Convert meters to grid coordinate string
  * @param {number} x - X coordinate in meters
  * @param {number} y - Y coordinate in meters
- * @param {boolean} highPrecision - Use 4-digit format (10m) instead of 3-digit (100m)
+ * @param {number|boolean} precision - 3 (100m), 4 (10m), 5 (1m) or legacy boolean highPrecision
  * @returns {string} Grid coordinate string
  */
-function metersToGrid(x, y, highPrecision = false) {
-    if (highPrecision) {
+function metersToGrid(x, y, precision = 3) {
+    // Backward compatibility: boolean true means legacy high precision (4-digit)
+    if (typeof precision === 'boolean') {
+        precision = precision ? 4 : 3;
+    }
+
+    if (precision === 5) {
+        const gridX = Math.floor(x).toString().padStart(5, '0');
+        const gridY = Math.floor(y).toString().padStart(5, '0');
+        return `${gridX}/${gridY}`;
+    }
+
+    if (precision === 4) {
         const gridX = Math.floor(x / 10).toString().padStart(4, '0');
         const gridY = Math.floor(y / 10).toString().padStart(4, '0');
         return `${gridX}/${gridY}`;
-    } else {
-        const gridX = Math.floor(x / 100).toString().padStart(3, '0');
-        const gridY = Math.floor(y / 100).toString().padStart(3, '0');
-        return `${gridX}/${gridY}`;
     }
+
+    const gridX = Math.floor(x / 100).toString().padStart(3, '0');
+    const gridY = Math.floor(y / 100).toString().padStart(3, '0');
+    return `${gridX}/${gridY}`;
 }
 
 /**

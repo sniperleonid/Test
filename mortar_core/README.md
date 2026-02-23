@@ -7,7 +7,8 @@ Ballistic calculation engine for Arma Reforger mortar and MLRS weapon systems.
 | Action | Input | Example |
 |--------|-------|---------|
 | Grid 3-digit | `047/069` | Center of 100m square (4750m, 6950m) |
-| Grid 4-digit | `0475/0695` | Center of 10m square (4755m, 6955m) |
+| Grid 4-digit | `0475/0695` | 10m precision (4750m, 6950m) |
+| Grid 5-digit | `04755/06958` | 1m precision (4755m, 6958m) |
 | Right correction | `+10` | Shift impact 10m right |
 | Left correction | `-10` | Shift impact 10m left |
 | Add range | `+20` | Increase range 20m (farther) |
@@ -20,11 +21,11 @@ Visit **[armamortars.org](https://armamortars.org)** for the online calculator, 
 ## 🚀 Features
 - ✅ **Pure JavaScript** - No external dependencies
 - ✅ **Framework-agnostic** - Works in Node.js and browsers
-- ✅ **Multiple ballistic weapon systems** - Mortars (M252, 2B14), MLRS (BM-21 Grad, Type-62) and Howitzers (D-30, M119)
+- ✅ **Multiple ballistic weapon systems** - Mortars (M252, 2B14), MLRS (BM-21 Grad, Type-62) and Howitzers (D-30, M119, M777)
 - ✅ **Session sharing** - Share fire missions via URL with squad members (NEW in v2.7.0)
 - ✅ **Real-time validation** - Instant format and range checking while typing
 - ✅ **Dynamic range validation** - Updates when switching weapons or projectile types
-- ✅ **Grid coordinates** - 3-digit (100m) and 4-digit (10m) precision
+- ✅ **Grid coordinates** - 3-digit (100m), 4-digit (10m), and 5-digit (1m) precision
 - ✅ **Coordinate-system independent** - Uses simple 3D positions or grid format
 - ✅ **Height correction** - Automatic elevation adjustment with correction factors displayed (currently only for Mortars)
 - ✅ **Fire correction** - Gun-Target or Observer-Target line adjustments
@@ -104,7 +105,7 @@ applyFireCorrectionFromObserver(mortarPos, observerPos, targetPos, leftRight, ad
 generateFireForEffectPattern(mortarPos, targetPos, patternType, numRounds, spacing) → Array<Position3D>
 generateCircularPattern(targetPos, radius, numRounds) → Array<Position3D>
 
-// Convert positions to input (supports grid coordinates)
+// Convert positions to input (supports grid coordinates, including 5-digit 1m precision)
 prepareInput(mortarPos, targetPos, mortarId, shellType)
 
 // Grid coordinate utilities
@@ -116,7 +117,7 @@ parsePosition(position) → Position3D
 ### Grid Coordinate Examples
 
 ```javascript
-// Using grid coordinates (3-digit = center of 100m square, 4-digit = center of 10m square)
+// Using grid coordinates (3-digit = center of 100m square, 4-digit = 10m precision, 5-digit = 1m precision)
 const solution = BallisticCalculator.calculate(
     BallisticCalculator.prepareInput(
         { grid: "047/069", z: 15 },  // Mortar at 4750m/6950m, elevation 15m
@@ -126,7 +127,7 @@ const solution = BallisticCalculator.calculate(
     )
 );
 
-// Using 4-digit grid (1m precision)
+// Using 4-digit grid (10m precision) or 5-digit (1m precision)
 const input = BallisticCalculator.prepareInput(
     "0475/0695",  // Simple string format
     { grid: "0850/1050", z: 30 },
@@ -248,6 +249,7 @@ All weapon data is dynamically loaded from `ballistic-data.json`:
 |-----------|------|---------|-------------|-------|
 | `D30` | D-30 | 122mm | HE | 0.8km - 4.8km |
 | `M119` | M119 | 105mm | HE | 0.8km - 4.8km |
+| `M777` | M777 | 155mm | HE (Charge 1-5, Direct/Indirect) | 0.1km - 17.0km |
 
 ## 🛠️ Development
 
@@ -410,7 +412,7 @@ mortar_core/
 **Architecture Benefits:**
 - ✅ DOM inputs: Source of truth for all user state
 - ✅ State module: Only for calculation-specific state (corrections, charges)
-- ✅ Grid precision: 3-digit and 4-digit formats preserved exactly
+- ✅ Grid precision: 3-digit, 4-digit, and 5-digit formats preserved exactly
 - ✅ No circular sync bugs between DOM and State
 - ✅ Simplified mental model - read DOM when needed, don't cache
 - ✅ Backward compatible with old history entries
