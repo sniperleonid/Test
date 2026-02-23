@@ -4,6 +4,9 @@
  * Version: 1.8.0
  */
 
+// App version for cache busting and display
+export const APP_VERSION = '2.7.1';
+
 // Input field ID mappings
 export const INPUT_IDS = {
     MORTAR_FIELDS: ['mortarGridX', 'mortarGridY', 'mortarX', 'mortarY', 'mortarZ'],
