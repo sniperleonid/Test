@@ -728,8 +728,33 @@ export function initUI() {
             el.addEventListener('paste', (e) => {
                 e.preventDefault();
                 const text = e.clipboardData.getData('text');
-                const numericOnly = text.replace(/[^0-9]/g, '');
+                const pairedId = id.endsWith('GridX') ? id.replace('GridX', 'GridY') :
+                    (id.endsWith('GridY') ? id.replace('GridY', 'GridX') : null);
+                const pairedEl = pairedId ? getElement(pairedId, false) : null;
+
+                // Support pasting combined grids like "058/069", "058 069", or "058-069"
+                // to reduce user input errors.
+                const tokens = text.trim().split(/[^0-9]+/).filter(Boolean);
+                if (tokens.length >= 2 && pairedEl) {
+                    const first = tokens[0].slice(0, 5);
+                    const second = tokens[1].slice(0, 5);
+
+                    if (id.endsWith('GridX')) {
+                        el.value = first;
+                        pairedEl.value = second;
+                    } else {
+                        el.value = second;
+                        pairedEl.value = first;
+                    }
+
+                    el.dispatchEvent(new Event('input', { bubbles: true }));
+                    pairedEl.dispatchEvent(new Event('input', { bubbles: true }));
+                    return;
+                }
+
+                const numericOnly = text.replace(/[^0-9]/g, '').slice(0, 5);
                 el.value = numericOnly;
+                el.dispatchEvent(new Event('input', { bubbles: true }));
             });
             
             el.addEventListener('input', () => {
