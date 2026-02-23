@@ -19,6 +19,7 @@ import * as Share from './share.js';
 import { setDisplay, populateSelect } from './utils.js';
 import * as DOMCache from './dom-cache.js';
 import * as CoordManager from './coord-manager.js';
+import { APP_VERSION } from './constants.js';
 
 let ballisticDataLoaded = false;
 
@@ -133,7 +134,7 @@ async function init() {
     const app = DOMCache.getElement('app');
     
     try {
-        await BallisticCalculator.loadBallisticData('ballistic-data.json');
+        await BallisticCalculator.loadBallisticData(`ballistic-data.json?v=${APP_VERSION}`);
         ballisticDataLoaded = true;
         State.setBallisticDataLoaded(true);
         
