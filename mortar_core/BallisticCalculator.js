@@ -526,7 +526,9 @@ function normalizeInput(input) {
         windSpeed: typeof input.windSpeed === 'number' ? input.windSpeed : 0,
         windDirection: typeof input.windDirection === 'number' ? input.windDirection : 0,
         temperatureC: typeof input.temperatureC === 'number' ? input.temperatureC : 15,
-        pressureHPa: typeof input.pressureHPa === 'number' ? input.pressureHPa : 1013.25
+        pressureHPa: typeof input.pressureHPa === 'number' ? input.pressureHPa : 1013.25,
+        fireMode: ['direct', 'indirect', 'auto'].includes(input.fireMode) ? input.fireMode : 'auto',
+        trajectoryPreference: ['low', 'high', 'auto'].includes(input.trajectoryPreference) ? input.trajectoryPreference : 'auto'
     };
 }
 
@@ -973,8 +975,41 @@ function validateInput(input) {
     if (!Number.isFinite(normalized.pressureHPa) || normalized.pressureHPa < 800 || normalized.pressureHPa > 1100) {
         throw new Error('Invalid pressure: must be between 800 and 1100 hPa');
     }
+
+    if (!['direct', 'indirect', 'auto'].includes(normalized.fireMode)) {
+        throw new Error('Invalid fire mode: must be direct, indirect, or auto');
+    }
+
+    if (!['low', 'high', 'auto'].includes(normalized.trajectoryPreference)) {
+        throw new Error('Invalid trajectory preference: must be low, high, or auto');
+    }
     
     return normalized;
+}
+
+function selectBestSolutionByMode(modeSolutions, input) {
+    if (!Array.isArray(modeSolutions) || modeSolutions.length === 0) {
+        return null;
+    }
+
+    const preferredTrajectory = input.trajectoryPreference;
+    const filtered = preferredTrajectory === 'auto'
+        ? modeSolutions
+        : modeSolutions.filter(sol => sol.trajectoryType === preferredTrajectory);
+    const candidates = filtered.length > 0 ? filtered : modeSolutions;
+
+    const score = (sol) => {
+        const modePenalty = sol.fireModeUsed === 'direct' ? Math.abs(input.heightDifference) * 0.05 : 0;
+        return (sol.timeOfFlight || 0) + Math.abs(sol.elevationCorrection || 0) * 0.03 + modePenalty;
+    };
+
+    return [...candidates].sort((a, b) => score(a) - score(b))[0];
+}
+
+function getModesToEvaluate(fireMode) {
+    if (fireMode === 'direct') return ['direct'];
+    if (fireMode === 'indirect') return ['indirect'];
+    return ['indirect', 'direct'];
 }
 
 /**
@@ -1012,16 +1047,22 @@ function calculateAllTrajectories(input) {
             }];
         }
         
-        const solution = calculateForCharge(charge, normalized);
-        return [solution];
+        const modeSolutions = getModesToEvaluate(normalized.fireMode)
+            .map(mode => calculateForCharge(charge, { ...normalized, fireMode: mode }))
+            .filter(sol => sol.inRange);
+        const best = selectBestSolutionByMode(modeSolutions, normalized);
+        return best ? [best] : modeSolutions;
     }
     
     // Find all charges that can reach the target
     for (const charge of shell.charges) {
         if (normalized.distance >= charge.minRange && normalized.distance <= charge.maxRange) {
-            const solution = calculateForCharge(charge, normalized);
-            if (solution.inRange) {
-                solutions.push(solution);
+            const modeSolutions = getModesToEvaluate(normalized.fireMode)
+                .map(mode => calculateForCharge(charge, { ...normalized, fireMode: mode }))
+                .filter(sol => sol.inRange);
+            const best = selectBestSolutionByMode(modeSolutions, normalized);
+            if (best && best.inRange) {
+                solutions.push(best);
             }
         }
     }
@@ -1037,7 +1078,7 @@ function calculateAllTrajectories(input) {
     }
     
     // Sort by charge level (lowest first - preferred for accuracy)
-    solutions.sort((a, b) => a.charge - b.charge);
+    solutions.sort((a, b) => a.charge - b.charge || a.timeOfFlight - b.timeOfFlight);
     
     return solutions;
 }
@@ -1221,46 +1262,57 @@ function calculateForCharge(charge, input) {
         };
     }
     
+    const heightDifference = input.fireMode === 'direct' ? 0 : input.heightDifference;
+
     const correctedElevation = applyHeightCorrection(
         ballistics.elevation,
-        input.heightDifference,
+        heightDifference,
         ballistics.dElev
     );
     
     const correctedTOF = applyTOFCorrection(
         ballistics.tof,
-        input.heightDifference,
+        heightDifference,
         ballistics.tofPer100m || 0
     );
+
+    const environment = applyEnvironmentCorrections(
+        correctedElevation,
+        correctedTOF,
+        input.bearing,
+        input.distance,
+        ballistics,
+        input
+    );
+
+    const safeElevation = clampElevationToTable(environment.elevation, charge.rangeTable);
     
-    const elevationCorrection = input.heightDifference !== 0 
-        ? ballistics.elevation - correctedElevation 
-        : 0;
+    const elevationCorrection = ballistics.elevation - safeElevation;
     
-    const tofCorrection = input.heightDifference !== 0 && ballistics.tofPer100m
-        ? correctedTOF - ballistics.tof
-        : 0;
+    const tofCorrection = (correctedTOF - ballistics.tof) + environment.tofCorrection;
     
     const weaponId = input.weaponId || input.mortarId;
-    const elevationDegrees = milsToDegrees(correctedElevation, weaponId);
-    const azimuthMils = calculateAzimuthMils(input.bearing, weaponId);
+    const elevationDegrees = milsToDegrees(safeElevation, weaponId);
+    const azimuthMils = calculateAzimuthMils(environment.azimuthDegrees, weaponId);
     
     return {
         inRange: true,
         charge: charge.level,
-        elevation: Math.round(correctedElevation),
-        elevationPrecise: parseFloat(correctedElevation.toFixed(2)),
+        elevation: Math.round(safeElevation),
+        elevationPrecise: parseFloat(safeElevation.toFixed(2)),
         elevationCorrection: parseFloat(elevationCorrection.toFixed(2)),
         dElev: Math.round(ballistics.dElev || 0),
         elevationDegrees: parseFloat(elevationDegrees.toFixed(1)),
-        azimuth: parseFloat(input.bearing.toFixed(1)),
+        azimuth: parseFloat(environment.azimuthDegrees.toFixed(1)),
         azimuthMils: Math.round(azimuthMils),
-        timeOfFlight: parseFloat(correctedTOF.toFixed(1)),
+        timeOfFlight: parseFloat(environment.tof.toFixed(1)),
         tofCorrection: parseFloat(tofCorrection.toFixed(1)),
         tofPer100m: ballistics.tofPer100m || 0,
         minRange: charge.minRange,
         maxRange: charge.maxRange,
-        trajectoryType: correctedElevation > 800 ? 'high' : 'low'
+        trajectoryType: safeElevation > 800 ? 'high' : 'low',
+        fireModeUsed: input.fireMode === 'direct' ? 'direct' : 'indirect',
+        environmentCorrections: environment.details
     };
 }
 
@@ -1294,9 +1346,9 @@ function calculate(input) {
     
     // Mortar: Charge selection
     const shell = ammunition;
-    const charge = input.chargeLevel !== undefined
-        ? shell.charges.find(c => c.level === input.chargeLevel)
-        : findOptimalCharge(shell.charges, input.distance);
+    const charge = normalized.chargeLevel !== undefined
+        ? shell.charges.find(c => c.level === normalized.chargeLevel)
+        : findOptimalCharge(shell.charges, normalized.distance);
     
     if (!charge) {
         return {
@@ -1307,60 +1359,22 @@ function calculate(input) {
         };
     }
     
-    const ballistics = interpolateFromTable(charge.rangeTable, input.distance);
-    
-    if (!ballistics) {
-        return {
-            inRange: false,
-            error: 'Distance outside ballistic table range',
-            charge: charge.level,
-            minRange: charge.minRange,
-            maxRange: charge.maxRange
-        };
+    const modeSolutions = getModesToEvaluate(normalized.fireMode)
+        .map(mode => calculateForCharge(charge, { ...normalized, fireMode: mode }))
+        .filter(sol => sol.inRange);
+
+    const solution = selectBestSolutionByMode(modeSolutions, normalized);
+    if (solution) {
+        return solution;
     }
-    
-    const correctedElevation = applyHeightCorrection(
-        ballistics.elevation,
-        input.heightDifference,
-        ballistics.dElev
-    );
-    
-    const correctedTOF = applyTOFCorrection(
-        ballistics.tof,
-        input.heightDifference,
-        ballistics.tofPer100m || 0
-    );
-    
-    const elevationCorrection = input.heightDifference !== 0 
-        ? ballistics.elevation - correctedElevation 
-        : 0;
-    
-    const tofCorrection = input.heightDifference !== 0 && ballistics.tofPer100m
-        ? correctedTOF - ballistics.tof
-        : 0;
-    
-    const weaponId = input.weaponId || input.mortarId;
-    const elevationDegrees = milsToDegrees(correctedElevation, weaponId);
-    const azimuthMils = calculateAzimuthMils(input.bearing, weaponId);
-    
-    const solution = {
-        inRange: true,
+
+    return {
+        inRange: false,
+        error: 'Distance outside ballistic table range',
         charge: charge.level,
-        elevation: Math.round(correctedElevation),
-        elevationPrecise: parseFloat(correctedElevation.toFixed(2)),
-        elevationCorrection: parseFloat(elevationCorrection.toFixed(2)),
-        dElev: Math.round(ballistics.dElev || 0),
-        elevationDegrees: parseFloat(elevationDegrees.toFixed(1)),
-        azimuth: parseFloat(input.bearing.toFixed(1)),
-        azimuthMils: Math.round(azimuthMils),
-        timeOfFlight: parseFloat(correctedTOF.toFixed(1)),
-        tofCorrection: parseFloat(tofCorrection.toFixed(1)),
-        tofPer100m: ballistics.tofPer100m || 0,
         minRange: charge.minRange,
         maxRange: charge.maxRange
     };
-    
-    return solution;
 }
 
 /**
