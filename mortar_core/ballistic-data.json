@@ -4209,7 +4209,14 @@
           ]
         }
       ],
-      "notes": "M107 shell model using provided init speed coefficients [1.4, 2.045, 2.79, 3.535, 4.28]; includes direct and indirect ballistic tables for each charge."
+      "notes": "M107 shell model using provided init speed coefficients [1.4, 2.045, 2.79, 3.535, 4.28]; includes direct and indirect ballistic tables for each charge.",
+      "preciseInitSpeedCoefficients": [
+        1.4,
+        2.045,
+        2.79,
+        3.535,
+        4.28
+      ]
     },
     {
       "systemType": "mlrs",
