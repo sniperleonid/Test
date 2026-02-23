@@ -103,7 +103,7 @@ function sanitizePasteDecimal(e) {
 }
 
 /**
- * Validate grid coordinate format (3-4 digits)
+ * Validate grid coordinate format (3-5 digits)
  */
 export function validateGridFormat(input) {
     const trimmed = input.value.trim();
@@ -116,7 +116,7 @@ export function validateGridFormat(input) {
     const isValid = CoordManager.isValidGrid(trimmed);
     
     if (!isValid) {
-        highlightField(input, '3 or 4 digits (e.g., 058, 0584)', COLORS.errorText);
+        highlightField(input, '3, 4 or 5 digits (e.g., 058, 0584, 05845)', COLORS.errorText);
     } else {
         clearFieldHighlighting(input);
     }
@@ -208,7 +208,7 @@ export function validateCoordinateRange(input) {
         if (input && input.id && input.id.includes('Grid')) {
             const errorMsg = error.message || String(error);
             // Skip showing the long grid format error - validateGridFormat already handles this
-            if (!errorMsg.includes('Grid coordinates must be 3 or 4 digits')) {
+            if (!errorMsg.includes('Grid coordinates must be 3, 4, or 5 digits')) {
                 const cleanMsg = errorMsg.replace(/^Error:\s*/, '');
                 highlightField(input, cleanMsg, COLORS.errorText);
             }
