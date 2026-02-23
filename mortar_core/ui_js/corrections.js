@@ -248,12 +248,12 @@ export async function applyFireCorrectionUI() {
         const isGridMode = CoordManager.getMode() === 'grid';
         
         if (isGridMode) {
-            // Determine precision based on current input length (preserve 3-4 digit format)
+            // Determine precision based on current input length (preserve 3-5 digit format)
             const targetGridXEl = getElement('targetGridX', false);
             const currentValue = targetGridXEl ? targetGridXEl.value.trim() : '';
-            const useHighPrecision = currentValue.length === 4;
+            const precision = currentValue.length === 5 ? 5 : (currentValue.length === 4 ? 4 : 3);
             
-            const gridCoords = BallisticCalculator.metersToGrid(corrected.x, corrected.y, useHighPrecision);
+            const gridCoords = BallisticCalculator.metersToGrid(corrected.x, corrected.y, precision);
             const gridParts = gridCoords.split('/');
             setValue('targetGridX', gridParts[0]);
             setValue('targetGridY', gridParts[1]);
@@ -373,4 +373,3 @@ export function setupCorrectionListeners() {
 /**
  * Removed: exposeToWindow() - Functions now use event listeners
  */
-
