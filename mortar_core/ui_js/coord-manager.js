@@ -188,12 +188,12 @@ export function setPosition(prefix, position) {
             return;
         }
         
-        // Determine precision based on current input length (preserve 3-4 digit format)
+        // Determine precision based on current input length (preserve 3-5 digit format)
         const gridXEl = getElement(`${prefix}GridX`, false);
         const currentValue = gridXEl ? gridXEl.value.trim() : '';
-        const useHighPrecision = currentValue.length === 4;
+        const precision = currentValue.length === 5 ? 5 : (currentValue.length === 4 ? 4 : 3);
         
-        const grid = BallisticCalculator.metersToGrid(position.x, position.y, useHighPrecision).split('/');
+        const grid = BallisticCalculator.metersToGrid(position.x, position.y, precision).split('/');
         setValue(`${prefix}GridX`, grid[0]);
         setValue(`${prefix}GridY`, grid[1]);
     } else {
@@ -234,12 +234,12 @@ export function setPositions(weaponPos, targetPos, observerPos = null) {
 }
 
 /**
- * Validate grid format (3-4 digits)
+ * Validate grid format (3-5 digits)
  * @param {string} value - Grid coordinate value
  * @returns {boolean}
  */
 export function isValidGrid(value) {
-    return /^\d{3,4}$/.test(value.trim());
+    return /^\d{3,5}$/.test(value.trim());
 }
 
 /**
