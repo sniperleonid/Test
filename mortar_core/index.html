@@ -629,8 +629,8 @@
 </head>
 <body>
     <div id="languageSwitcher" style="display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 10px;">
-        <button type="button" class="lang-flag" data-lang="en" aria-label="Switch language to English" style="width: auto; margin: 0; padding: 6px 10px; font-size: 16px; line-height: 1;">🇺🇸 EN</button>
-        <button type="button" class="lang-flag" data-lang="ru" aria-label="Переключить язык на русский" style="width: auto; margin: 0; padding: 6px 10px; font-size: 16px; line-height: 1;">🇷🇺 RU</button>
+        <button type="button" class="lang-flag" data-lang="en" data-i18n-aria-label="switchToEnglish" aria-label="Switch language to English" style="width: auto; margin: 0; padding: 6px 10px; font-size: 16px; line-height: 1;">🇺🇸 EN</button>
+        <button type="button" class="lang-flag" data-lang="ru" data-i18n-aria-label="switchToRussian" aria-label="Переключить язык на русский" style="width: auto; margin: 0; padding: 6px 10px; font-size: 16px; line-height: 1;">🇷🇺 RU</button>
     </div>
 
     <!-- Main Header -->
@@ -641,12 +641,12 @@
     
     <!-- Main Content -->
     <main>
-    <div id="loading" role="status" aria-live="polite">Loading ballistic data...</div>
+    <div id="loading" role="status" aria-live="polite" data-i18n="loadingBallistics">Loading ballistic data...</div>
     
     <div id="app" style="display: none;">
         <!-- Supported Weapon Systems -->
         <div class="container">
-            <h2 style="margin-top: 0;">🎯 Supported Weapon Systems</h2>
+            <h2 style="margin-top: 0;" data-i18n="supportedWeaponSystems">🎯 Supported Weapon Systems</h2>
             <div class="solution-grid weapons">
                 <div class="solution-item weapon-mortar">
                     <div class="weapon-title">💣 MORTARS</div>
@@ -675,59 +675,59 @@
         <!-- History Panel -->
         <div id="historyPanel" class="history-panel cls-hidden">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <h2 style="margin: 0;">📜 Mission History</h2>
-                <button class="clear-history-btn" id="clearHistoryBtn">Clear All</button>
+                <h2 style="margin: 0;" data-i18n="missionHistory">📜 Mission History</h2>
+                <button class="clear-history-btn" id="clearHistoryBtn" data-i18n="clearAll">Clear All</button>
             </div>
             <div id="historyList"></div>
         </div>
         
         <div class="toggle-container">
-            <span style="font-weight: 500; color: #b8c7a0; text-align: center;">Coordinate Input:</span>
+            <span style="font-weight: 500; color: #b8c7a0; text-align: center;" data-i18n="coordinateInput">Coordinate Input:</span>
             <div class="toggle-buttons">
                 <div class="toggle-option active" id="toggleGrid" data-mode="grid">
-                    🎯 Grid (047/069)
+                    <span data-i18n="toggleGrid">🎯 Grid (047/069)</span>
                 </div>
                 <div class="toggle-option" id="toggleMeters" data-mode="meters">
-                    📏 Meters (X/Y)
+                    <span data-i18n="toggleMeters">📏 Meters (X/Y)</span>
                 </div>
             </div>
         </div>
         
         <div class="container">
-            <h2>1️⃣ Weapon System and Ammunition</h2>
+            <h2 data-i18n="sectionWeaponAndAmmo">1️⃣ Weapon System and Ammunition</h2>
             
             <div class="row">
                 <div class="form-group">
-                    <label for="mortarType">Weapon System Type</label>
+                    <label for="mortarType" data-i18n="weaponSystemType">Weapon System Type</label>
                     <select id="mortarType">
                         <!-- Populated dynamically from ballistic-data.json -->
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="shellType">Ammunition Type</label>
+                    <label for="shellType" data-i18n="ammunitionType">Ammunition Type</label>
                     <select id="shellType">
                         <!-- Populated dynamically from ballistic-data.json -->
                     </select>
                 </div>
             </div>
             
-            <h2>2️⃣ Weapon Position</h2>
+            <h2 data-i18n="sectionWeaponPosition">2️⃣ Weapon Position</h2>
                 
                 <!-- Grid Mode -->
                 <div id="mortarGridMode" class="coord-mode active">
                     <div class="form-group">
                         <div class="row">
                             <div class="form-group">
-                                <label for="mortarGridX">Grid X Coordinate</label>
+                                <label for="mortarGridX" data-i18n="gridXCoordinate">Grid X Coordinate</label>
                                 <input type="text" id="mortarGridX" placeholder="047, 0475 or 04755" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                             <div class="form-group">
-                                <label for="mortarGridY">Grid Y Coordinate</label>
+                                <label for="mortarGridY" data-i18n="gridYCoordinate">Grid Y Coordinate</label>
                                 <input type="text" id="mortarGridY" placeholder="069, 0695 or 06955" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                         </div>
-                        <small style="color: #999; display: block; margin-top: -15px;">3-digit (100m squares), 4-digit (10m), or 5-digit (1m precision)</small>
+                        <small style="color: #999; display: block; margin-top: -15px;" data-i18n="gridHint">3-digit (100m squares), 4-digit (10m), or 5-digit (1m precision)</small>
                     </div>
                 </div>
                 
@@ -736,47 +736,47 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="form-group">
-                                <label for="mortarX">X Coordinate (meters)</label>
+                                <label for="mortarX" data-i18n="xCoordinateMeters">X Coordinate (meters)</label>
                                 <input type="number" id="mortarX" placeholder="4800" step="0.1" min="0" max="99999.9" inputmode="decimal">
                             </div>
                             <div class="form-group">
-                                <label for="mortarY">Y Coordinate (meters)</label>
+                                <label for="mortarY" data-i18n="yCoordinateMeters">Y Coordinate (meters)</label>
                                 <input type="number" id="mortarY" placeholder="7049" step="0.1" min="0" max="99999.9" inputmode="decimal">
                             </div>
                         </div>
-                        <small style="color: #999; display: block; margin-top: -15px;">Map coordinates in meters (e.g., 4800.5, 7049.0)</small>
+                        <small style="color: #999; display: block; margin-top: -15px;" data-i18n="mapCoordinatesMetersHint">Map coordinates in meters (e.g., 4800.5, 7049.0)</small>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="mortarZ">Height (m ASL)</label>
+                    <label for="mortarZ" data-i18n="heightAsl">Height (m ASL)</label>
                     <input type="number" id="mortarZ" placeholder="168" step="0.1" min="-1000" max="9999" inputmode="decimal">
                 </div>
 
                 <div class="form-group" style="margin-top: -8px;">
                     <label for="lockMortarPosition" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; user-select: none;">
-                        <span>🔒 Lock weapon coordinates + height</span>
-                        <input type="checkbox" id="lockMortarPosition" role="switch" aria-label="Lock weapon coordinates and height" style="width: 40px; height: 20px; cursor: pointer;">
+                        <span data-i18n="lockWeaponCoordinates">🔒 Lock weapon coordinates + height</span>
+                        <input type="checkbox" id="lockMortarPosition" role="switch" data-i18n-aria-label="lockWeaponCoordinatesAria" aria-label="Lock weapon coordinates and height" style="width: 40px; height: 20px; cursor: pointer;">
                     </label>
-                    <small style="color: #999; display: block;">Prevents accidental edits to mortar position while calculating.</small>
+                    <small style="color: #999; display: block;" data-i18n="lockWeaponCoordinatesHint">Prevents accidental edits to mortar position while calculating.</small>
                 </div>
                 
-                <h2>3️⃣ Target Position</h2>
+                <h2 data-i18n="sectionTargetPosition">3️⃣ Target Position</h2>
                 
                 <!-- Grid Mode -->
                 <div id="targetGridMode" class="coord-mode active">
                     <div class="form-group">
                         <div class="row">
                             <div class="form-group">
-                                <label for="targetGridX">Grid X Coordinate</label>
+                                <label for="targetGridX" data-i18n="gridXCoordinate">Grid X Coordinate</label>
                                 <input type="text" id="targetGridX" placeholder="085, 0850 or 08500" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                             <div class="form-group">
-                                <label for="targetGridY">Grid Y Coordinate</label>
+                                <label for="targetGridY" data-i18n="gridYCoordinate">Grid Y Coordinate</label>
                                 <input type="text" id="targetGridY" placeholder="105, 1050 or 10500" maxlength="5" inputmode="numeric" pattern="[0-9]*">
                             </div>
                         </div>
-                        <small style="color: #999; display: block; margin-top: -15px;">3-digit (100m squares), 4-digit (10m), or 5-digit (1m precision)</small>
+                        <small style="color: #999; display: block; margin-top: -15px;" data-i18n="gridHint">3-digit (100m squares), 4-digit (10m), or 5-digit (1m precision)</small>
                     </div>
                 </div>
                 
@@ -785,20 +785,20 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="form-group">
-                                <label for="targetX">X Coordinate (meters)</label>
+                                <label for="targetX" data-i18n="xCoordinateMeters">X Coordinate (meters)</label>
                                 <input type="number" id="targetX" placeholder="4696" step="0.1" min="0" max="99999.9" inputmode="decimal">
                             </div>
                             <div class="form-group">
-                                <label for="targetY">Y Coordinate (meters)</label>
+                                <label for="targetY" data-i18n="yCoordinateMeters">Y Coordinate (meters)</label>
                                 <input type="number" id="targetY" placeholder="5516" step="0.1" min="0" max="99999.9" inputmode="decimal">
                             </div>
                         </div>
-                        <small style="color: #999; display: block; margin-top: -15px;">Map coordinates in meters (e.g., 4696.0, 5516.0)</small>
+                        <small style="color: #999; display: block; margin-top: -15px;" data-i18n="mapCoordinatesMetersHint">Map coordinates in meters (e.g., 4696.0, 5516.0)</small>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="targetZ">Height (m ASL)</label>
+                    <label for="targetZ" data-i18n="heightAsl">Height (m ASL)</label>
                     <input type="number" id="targetZ" placeholder="64" step="0.1" min="-1000" max="9999" inputmode="decimal">
                 </div>
 
@@ -813,27 +813,27 @@
                     <small style="color: #999;" data-i18n="trajectoryHint">Force low/high arc or let calculator choose</small>
                 </div>
 
-                <h2>5️⃣ ACE Weather Corrections (Optional)</h2>
+                <h2 data-i18n="sectionWeatherCorrections">5️⃣ ACE Weather Corrections (Optional)</h2>
                 <div class="form-group" style="padding: 12px; border: 1px solid #4a5a52; border-radius: 4px; background: rgba(20, 25, 22, 0.45);">
                     <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin-bottom: 10px;">
                         <input type="checkbox" id="useWeatherCorrections" style="width: 16px; height: 16px;">
-                        <span>Use ACE weather corrections</span>
+                        <span data-i18n="useAceWeatherCorrections">Use ACE weather corrections</span>
                     </label>
 
                     <div class="row" style="margin-top: 8px;">
                         <div class="form-group">
                             <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                                 <input type="checkbox" id="useWindCorrection" checked>
-                                <span>Wind correction</span>
+                                <span data-i18n="windCorrection">Wind correction</span>
                             </label>
                             <input type="number" id="windSpeed" placeholder="0" value="0" step="0.1" min="0" max="50" inputmode="decimal">
-                            <small style="color: #999;">Wind speed (m/s)</small>
+                            <small style="color: #999;" data-i18n="windSpeed">Wind speed (m/s)</small>
                         </div>
 
                         <div class="form-group">
-                            <label for="windDirection">Wind direction (°)</label>
+                            <label for="windDirection" data-i18n="windDirection">Wind direction (°)</label>
                             <input type="number" id="windDirection" placeholder="0" value="0" step="1" min="0" max="360" inputmode="decimal">
-                            <small style="color: #999;">Direction wind is blowing from</small>
+                            <small style="color: #999;" data-i18n="windDirectionHint">Direction wind is blowing from</small>
                         </div>
                     </div>
 
@@ -841,26 +841,26 @@
                         <div class="form-group">
                             <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                                 <input type="checkbox" id="useTemperatureCorrection" checked>
-                                <span>Temperature correction</span>
+                                <span data-i18n="temperatureCorrection">Temperature correction</span>
                             </label>
                             <input type="number" id="temperatureC" placeholder="15" value="15" step="0.1" min="-80" max="80" inputmode="decimal">
-                            <small style="color: #999;">Air temperature (°C)</small>
+                            <small style="color: #999;" data-i18n="airTemperature">Air temperature (°C)</small>
                         </div>
 
                         <div class="form-group">
                             <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                                 <input type="checkbox" id="usePressureCorrection" checked>
-                                <span>Pressure correction</span>
+                                <span data-i18n="pressureCorrection">Pressure correction</span>
                             </label>
                             <input type="number" id="pressureHPa" placeholder="1013.25" value="1013.25" step="0.1" min="800" max="1100" inputmode="decimal">
-                            <small style="color: #999;">Pressure (hPa)</small>
+                            <small style="color: #999;" data-i18n="pressureHpa">Pressure (hPa)</small>
                         </div>
                     </div>
                 </div>
                 
             <div class="form-group">
-                <label for="missionLabel">Mission Label (Optional)</label>
-                <input type="text" id="missionLabel" placeholder="e.g., TRP 1, TGT AA1234, HILL 201" maxlength="20">
+                <label for="missionLabel" data-i18n="missionLabel">Mission Label (Optional)</label>
+                <input type="text" id="missionLabel" data-i18n-placeholder="missionLabelPlaceholder" placeholder="e.g., TRP 1, TGT AA1234, HILL 201" maxlength="20">
             </div>
             
             <!-- Range Indicator (pre-rendered to prevent CLS) -->
@@ -870,24 +870,24 @@
             <div id="rocketSuggestion" class="cls-hidden" style="margin-top: 10px; padding: 10px; background: linear-gradient(135deg, rgba(143, 188, 30, 0.15) 0%, rgba(107, 142, 35, 0.15) 100%); border: 1px solid rgba(143, 188, 30, 0.4); border-radius: 4px;">
                 <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
                     <div style="flex: 1;">
-                        <div id="suggestionTitle" style="color: #8fbc1e; font-size: 12px; font-weight: 600; margin-bottom: 3px;">💡 Recommendation</div>
+                        <div id="suggestionTitle" style="color: #8fbc1e; font-size: 12px; font-weight: 600; margin-bottom: 3px;" data-i18n="recommendation">💡 Recommendation</div>
                         <div id="suggestionText" style="color: #c8d4a0; font-size: 11px;"></div>
                     </div>
                     <div class="suggestion-buttons" style="display: flex; gap: 6px;">
                         <button type="button" id="acceptSuggestion" class="btn-press" style="padding: 8px 12px; background: linear-gradient(180deg, #8fbc1e 0%, #7aaa1a 100%); border: 1px solid #9fcc2e; border-radius: 3px; color: white; font-weight: 600; cursor: pointer; font-size: 11px; white-space: nowrap; margin: 0; width: auto;">
-                            Use This
+                            <span data-i18n="useThis">Use This</span>
                         </button>
                         <button type="button" id="dismissSuggestion" style="padding: 8px 12px; background: rgba(100, 100, 100, 0.3); border: 1px solid rgba(150, 150, 150, 0.4); border-radius: 3px; color: #aaa; font-weight: 600; cursor: pointer; font-size: 11px; white-space: nowrap; margin: 0; width: auto;">
-                            Dismiss
+                            <span data-i18n="dismiss">Dismiss</span>
                         </button>
                     </div>
                 </div>
             </div>
             
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <button id="calculate" class="btn-press" style="flex: 3;">Compute Fire Mission</button>
-                <button id="reset" class="btn-press" style="flex: 1; background: linear-gradient(180deg, #666 0%, #555 100%);">Reset</button>
-                <button id="shareBtn" class="btn-press" style="flex: 1; background: linear-gradient(180deg, #6b8e23 0%, #5a7a1c 100%); border: 1px solid #8fbc1e;">📤 Share</button>
+                <button id="calculate" class="btn-press" style="flex: 3;" data-i18n="computeFireMission">Compute Fire Mission</button>
+                <button id="reset" class="btn-press" style="flex: 1; background: linear-gradient(180deg, #666 0%, #555 100%);" data-i18n="reset">Reset</button>
+                <button id="shareBtn" class="btn-press" style="flex: 1; background: linear-gradient(180deg, #6b8e23 0%, #5a7a1c 100%); border: 1px solid #8fbc1e;" data-i18n="share">📤 Share</button>
             </div>
         </div>
         
