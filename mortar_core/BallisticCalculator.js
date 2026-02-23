@@ -814,6 +814,24 @@ function applyTOFCorrection(baseTOF, heightDifference, tofPer100m) {
 }
 
 /**
+ * Clamp elevation to ballistic table limits for the selected ammunition.
+ * Prevents corrected values from exceeding mechanically valid gun angles.
+ * @param {number} elevation - Calculated elevation in mils
+ * @param {Array<{elevation:number}>} ballisticTable - Table with valid elevation bounds
+ * @returns {number} Clamped elevation in mils
+ */
+function clampElevationToTable(elevation, ballisticTable) {
+    if (!Array.isArray(ballisticTable) || ballisticTable.length === 0) {
+        return elevation;
+    }
+
+    const minElevation = Math.min(...ballisticTable.map(entry => entry.elevation));
+    const maxElevation = Math.max(...ballisticTable.map(entry => entry.elevation));
+
+    return Math.min(Math.max(elevation, minElevation), maxElevation);
+}
+
+/**
  * Calculate azimuth in mils
  * @param {number} bearingDegrees - Bearing in degrees
  * @param {string} mortarType - Mortar type ID
@@ -1077,12 +1095,14 @@ function calculateForMLRS(projectile, input) {
         input
     );
 
-    const elevationCorrection = (ballistics.elevation - correctedElevation) + environment.elevationCorrection;
+    const safeElevation = clampElevationToTable(environment.elevation, projectile.ballisticTable);
+
+    const elevationCorrection = ballistics.elevation - safeElevation;
     const tofCorrection = (correctedTOF - ballistics.tof) + environment.tofCorrection;
     
     // Use weaponId from input for mil system conversion
     const weaponId = input.weaponId || input.mortarId;
-    const elevationDegrees = milsToDegrees(environment.elevation, weaponId);
+    const elevationDegrees = milsToDegrees(safeElevation, weaponId);
     const azimuthMils = calculateAzimuthMils(environment.azimuthDegrees, weaponId);
     
     return {
@@ -1091,8 +1111,8 @@ function calculateForMLRS(projectile, input) {
         projectileName: projectile.name,
         variant: projectile.variant,
         charge: 0,  // MLRS has no charge concept
-        elevation: Math.round(environment.elevation),
-        elevationPrecise: parseFloat(environment.elevation.toFixed(2)),
+        elevation: Math.round(safeElevation),
+        elevationPrecise: parseFloat(safeElevation.toFixed(2)),
         elevationCorrection: parseFloat(elevationCorrection.toFixed(2)),
         dElev: Math.round(ballistics.dElev || 0),
         elevationDegrees: parseFloat(elevationDegrees.toFixed(1)),
@@ -1104,7 +1124,7 @@ function calculateForMLRS(projectile, input) {
         environmentCorrections: environment.details,
         minRange: projectile.minRange,
         maxRange: projectile.maxRange,
-        trajectoryType: environment.elevation > 800 ? 'high' : 'low'
+        trajectoryType: safeElevation > 800 ? 'high' : 'low'
     };
 }
 
