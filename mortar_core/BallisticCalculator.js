@@ -730,7 +730,10 @@ function interpolateFromTable(rangeTable, distance) {
         const rangeDelta = high.range - low.range;
         if (rangeDelta === 0) return 0;
         const slopePerMeter = (high.elevation - low.elevation) / rangeDelta;
-        return parseFloat(Math.max(0, -slopePerMeter * 100).toFixed(2));
+        // Keep slope sign so correction direction follows weapon elevation scale:
+        // - negative slope -> positive dElev (legacy mortar tables)
+        // - positive slope -> negative dElev (direct-fire branches)
+        return parseFloat((-slopePerMeter * 100).toFixed(2));
     };
     
     for (let i = 0; i < rangeTable.length; i++) {
