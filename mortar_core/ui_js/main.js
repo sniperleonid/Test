@@ -24,6 +24,30 @@ import * as CoordManager from './coord-manager.js';
 const DATA_VERSION = '2.7.2';
 
 let ballisticDataLoaded = false;
+const BALLISTIC_DATA_TIMEOUT_MS = 12000;
+
+/**
+ * Add timeout protection to ballistic data loading.
+ * Prevents infinite "Loading ballistic data..." state on stalled network requests.
+ * @param {string} path
+ * @returns {Promise<void>}
+ */
+async function loadBallisticDataWithTimeout(path) {
+    let timerId;
+
+    try {
+        return await Promise.race([
+            BallisticCalculator.loadBallisticData(path),
+            new Promise((_, reject) => {
+                timerId = setTimeout(() => {
+                    reject(new Error(`Timed out after ${BALLISTIC_DATA_TIMEOUT_MS / 1000}s while loading ${path}`));
+                }, BALLISTIC_DATA_TIMEOUT_MS);
+            })
+        ]);
+    } finally {
+        clearTimeout(timerId);
+    }
+}
 
 /**
  * Wire dependencies using dependency injection
@@ -136,12 +160,31 @@ async function init() {
     const app = DOMCache.getElement('app');
     
     try {
-        try {
-            await BallisticCalculator.loadBallisticData(`ballistic-data.json?v=${DATA_VERSION}`);
-        } catch (versionedError) {
-            console.warn('Versioned ballistic data fetch failed, retrying plain path:', versionedError.message);
-            await BallisticCalculator.loadBallisticData('ballistic-data.json');
+        const dataPaths = [
+            `ballistic-data.json?v=${DATA_VERSION}`,
+            'ballistic-data.json',
+            `${window.location.origin}/ballistic-data.json?v=${DATA_VERSION}`,
+            `${window.location.origin}/ballistic-data.json`
+        ];
+
+        let loaded = false;
+        let lastError;
+
+        for (const dataPath of dataPaths) {
+            try {
+                await loadBallisticDataWithTimeout(dataPath);
+                loaded = true;
+                break;
+            } catch (pathError) {
+                lastError = pathError;
+                console.warn(`Ballistic data fetch failed for ${dataPath}:`, pathError.message);
+            }
         }
+
+        if (!loaded) {
+            throw lastError || new Error('Failed to load ballistic data from all fallback paths.');
+        }
+
         ballisticDataLoaded = true;
         State.setBallisticDataLoaded(true);
         
@@ -167,8 +210,17 @@ async function init() {
             <div style="color: red;">
                 ❌ Error loading ballistic data: ${error.message}
                 <br>Make sure the HTTP server is running from the mortar_core directory.
+                <br><button id="retryLoadBtn" style="margin-top: 12px; width: auto; padding: 8px 12px; font-size: 13px;">Retry loading data</button>
             </div>
         `;
+        const retryLoadBtn = document.getElementById('retryLoadBtn');
+        if (retryLoadBtn) {
+            retryLoadBtn.addEventListener('click', () => {
+                retryLoadBtn.disabled = true;
+                retryLoadBtn.textContent = 'Retrying...';
+                init();
+            });
+        }
         console.error('Error loading ballistic data:', error);
     }
 }
