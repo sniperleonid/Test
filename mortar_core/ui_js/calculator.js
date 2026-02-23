@@ -43,6 +43,13 @@ function getWeatherCorrectionInput() {
     };
 }
 
+function getFiringModeInput() {
+    return {
+        fireMode: getValue('fireMode') || 'auto',
+        trajectoryPreference: getValue('trajectoryPreference') || 'auto'
+    };
+}
+
 
 /**
  * Initialize calculator with dependencies
@@ -208,7 +215,7 @@ export function generateSolutionGridHTML(solution, previousChargeForDisplay) {
         const weaponPos = dependencies.parsePositionFromUI('mortar');
         const origPos = State.getOriginalTargetPos();
         const originalMeters = origPos.meters || origPos;
-        const originalInput = { ...BallisticCalculator.prepareInput(weaponPos, originalMeters, mortarId, shellType), ...getWeatherCorrectionInput() };
+        const originalInput = { ...BallisticCalculator.prepareInput(weaponPos, originalMeters, mortarId, shellType), ...getWeatherCorrectionInput(), ...getFiringModeInput() };
         originalInput.chargeLevel = solution.charge;
         const originalSolutions = BallisticCalculator.calculateAllTrajectories(originalInput);
         
@@ -612,7 +619,7 @@ export async function calculateSolution() {
             }
             
             const ffeSolutions = [];
-            const centerInput = { ...BallisticCalculator.prepareInput(weaponPos, targetParsed, mortarId, shellType), ...getWeatherCorrectionInput() };
+            const centerInput = { ...BallisticCalculator.prepareInput(weaponPos, targetParsed, mortarId, shellType), ...getWeatherCorrectionInput(), ...getFiringModeInput() };
             const centerSolutions = BallisticCalculator.calculateAllTrajectories(centerInput);
             
             if (centerSolutions.length === 0 || !centerSolutions[0].inRange) {
@@ -622,7 +629,7 @@ export async function calculateSolution() {
             const ffeCharge = centerSolutions[0].charge;
             
             targetPositions.forEach((pos, index) => {
-                const input = { ...BallisticCalculator.prepareInput(weaponPos, pos, mortarId, shellType), ...getWeatherCorrectionInput() };
+                const input = { ...BallisticCalculator.prepareInput(weaponPos, pos, mortarId, shellType), ...getWeatherCorrectionInput(), ...getFiringModeInput() };
                 input.chargeLevel = ffeCharge;
                 const solutions = BallisticCalculator.calculateAllTrajectories(input);
                 if (solutions.length > 0 && solutions[0].inRange) {
@@ -694,7 +701,7 @@ export async function calculateSolution() {
         }
         
         // Normal calculation mode
-        const input = { ...BallisticCalculator.prepareInput(weaponPos, targetPos, mortarId, shellType), ...getWeatherCorrectionInput() };
+        const input = { ...BallisticCalculator.prepareInput(weaponPos, targetPos, mortarId, shellType), ...getWeatherCorrectionInput(), ...getFiringModeInput() };
         let solutions = BallisticCalculator.calculateAllTrajectories(input);
         
         if (State.isCorrectionApplied() && State.getSelectedCharge() !== undefined && solutions.length > 0) {
