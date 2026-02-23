@@ -628,22 +628,16 @@
     </style>
 </head>
 <body>
+    <div id="languageSwitcher" style="display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 10px;">
+        <button type="button" class="lang-flag" data-lang="en" aria-label="Switch language to English" style="width: auto; margin: 0; padding: 6px 10px; font-size: 18px; line-height: 1;">🇬🇧</button>
+        <button type="button" class="lang-flag" data-lang="ru" aria-label="Переключить язык на русский" style="width: auto; margin: 0; padding: 6px 10px; font-size: 18px; line-height: 1;">🇷🇺</button>
+    </div>
+
     <!-- Main Header -->
     <header class="header">
         <img src="arma-reforger-logo.png" alt="Arma Reforger Logo - Mortar & Artillery Calculator" class="logo" width="80" height="80" fetchpriority="high">
-        <h1>Arma Reforger Mortar & Artillery Calculator</h1>
+        <h1 data-i18n="appTitle">Arma Reforger Mortar & Artillery Calculator</h1>
     </header>
-    
-    <!-- New Feature Banner -->
-    <div style="background: linear-gradient(135deg, rgba(107, 142, 35, 0.25) 0%, rgba(107, 142, 35, 0.15) 100%); border: 2px solid #6b8e23; border-radius: 6px; padding: 15px 20px; margin: 20px auto; max-width: 900px; box-shadow: 0 4px 12px rgba(107, 142, 35, 0.2);">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="font-size: 32px; line-height: 1;">🔗</div>
-            <div style="flex: 1;">
-                <div style="color: #8fbc1e; font-weight: bold; font-size: 16px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;">✨ New Feature: Session Sharing</div>
-                <div style="color: #c8d4a0; font-size: 14px; line-height: 1.5;">Share fire missions with your squad! Click the <strong style="color: #8fbc1e;">🔗 Share</strong> button to generate a shareable link or paste a link to import mission data instantly.</div>
-            </div>
-        </div>
-    </div>
     
     <!-- Main Content -->
     <main>
@@ -808,26 +802,15 @@
                     <input type="number" id="targetZ" placeholder="64" step="0.1" min="-1000" max="9999" inputmode="decimal">
                 </div>
 
-                <h2>4️⃣ Fire Mode & Trajectory</h2>
-                <div class="row" style="margin-bottom: 8px;">
-                    <div class="form-group">
-                        <label for="fireMode">Fire mode</label>
-                        <select id="fireMode">
-                            <option value="auto" selected>Auto (best)</option>
-                            <option value="direct">Direct fire</option>
-                            <option value="indirect">Indirect / high-angle</option>
-                        </select>
-                        <small style="color: #999;">Direct ignores Alt Diff, indirect uses Alt Diff</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="trajectoryPreference">Trajectory</label>
-                        <select id="trajectoryPreference">
-                            <option value="auto" selected>Auto (best)</option>
-                            <option value="low">Low trajectory</option>
-                            <option value="high">High trajectory</option>
-                        </select>
-                        <small style="color: #999;">Force low/high arc or let calculator choose</small>
-                    </div>
+                <h2 data-i18n="trajectorySectionTitle">4️⃣ Trajectory</h2>
+                <div class="form-group" style="margin-bottom: 8px;">
+                    <label for="trajectoryPreference" data-i18n="trajectoryLabel">Trajectory</label>
+                    <select id="trajectoryPreference">
+                        <option value="auto" selected data-i18n="trajectoryAuto">Auto (best)</option>
+                        <option value="low" data-i18n="trajectoryLow">Low trajectory</option>
+                        <option value="high" data-i18n="trajectoryHigh">High trajectory</option>
+                    </select>
+                    <small style="color: #999;" data-i18n="trajectoryHint">Force low/high arc or let calculator choose</small>
                 </div>
 
                 <h2>5️⃣ ACE Weather Corrections (Optional)</h2>

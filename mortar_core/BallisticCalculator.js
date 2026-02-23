@@ -1262,7 +1262,7 @@ function calculateForCharge(charge, input) {
         };
     }
     
-    const heightDifference = input.fireMode === 'direct' ? 0 : input.heightDifference;
+    const heightDifference = input.heightDifference;
 
     const correctedElevation = applyHeightCorrection(
         ballistics.elevation,

@@ -3341,71 +3341,92 @@
               "range": 100,
               "elevation": 26,
               "tof": 0.7,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -26.52,
+              "tofPer100m": 0.74
             },
             {
               "range": 150,
-              "elevation": 38,
+              "elevation": 39,
               "tof": 1.1,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -26.75,
+              "tofPer100m": 0.74
+            },
+            {
+              "range": 200,
+              "elevation": 53,
+              "tof": 1.5,
+              "dElev": -27.23,
+              "tofPer100m": 0.75
             },
             {
               "range": 250,
-              "elevation": 64,
+              "elevation": 66,
               "tof": 1.8,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -27.74,
+              "tofPer100m": 0.76
             },
             {
               "range": 300,
-              "elevation": 77,
-              "tof": 2.1,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 80,
+              "tof": 2.2,
+              "dElev": -28.28,
+              "tofPer100m": 0.77
             },
             {
               "range": 350,
-              "elevation": 90,
-              "tof": 2.5,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 95,
+              "tof": 2.6,
+              "dElev": -28.85,
+              "tofPer100m": 0.78
+            },
+            {
+              "range": 400,
+              "elevation": 109,
+              "tof": 3.0,
+              "dElev": -29.47,
+              "tofPer100m": 0.8
             },
             {
               "range": 450,
-              "elevation": 116,
-              "tof": 3.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 124,
+              "tof": 3.4,
+              "dElev": -30.14,
+              "tofPer100m": 0.81
             },
             {
               "range": 500,
-              "elevation": 129,
-              "tof": 3.6,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 139,
+              "tof": 3.8,
+              "dElev": -30.86,
+              "tofPer100m": 0.82
             },
             {
               "range": 550,
-              "elevation": 142,
-              "tof": 4.0,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 155,
+              "tof": 4.2,
+              "dElev": -31.64,
+              "tofPer100m": 0.84
+            },
+            {
+              "range": 600,
+              "elevation": 171,
+              "tof": 4.7,
+              "dElev": -32.49,
+              "tofPer100m": 0.86
             },
             {
               "range": 650,
-              "elevation": 169,
-              "tof": 4.7,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 187,
+              "tof": 5.1,
+              "dElev": -33.4,
+              "tofPer100m": 0.87
             },
             {
-              "range": 700,
-              "elevation": 182,
-              "tof": 5.1,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 699,
+              "elevation": 204,
+              "tof": 5.5,
+              "dElev": -33.88,
+              "tofPer100m": 0.88
             }
           ]
         },
@@ -3415,92 +3436,99 @@
           "type": "HE",
           "variant": "indirect_fire",
           "charge": 1,
-          "minRange": 500,
-          "maxRange": 1838,
+          "minRange": 900,
+          "maxRange": 1500,
           "ballisticTable": [
             {
-              "range": 500,
-              "elevation": 1471,
-              "tof": 28.3,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 600,
-              "elevation": 1445,
-              "tof": 28.2,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 700,
-              "elevation": 1418,
-              "tof": 28.1,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
               "range": 900,
-              "elevation": 1362,
-              "tof": 27.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1267,
+              "tof": 24.6,
+              "dElev": 45.0,
+              "tofPer100m": -0.37
+            },
+            {
+              "range": 950,
+              "elevation": 1245,
+              "tof": 24.4,
+              "dElev": 45.88,
+              "tofPer100m": -0.39
             },
             {
               "range": 1000,
-              "elevation": 1333,
-              "tof": 27.6,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1221,
+              "tof": 24.2,
+              "dElev": 47.79,
+              "tofPer100m": -0.43
+            },
+            {
+              "range": 1050,
+              "elevation": 1197,
+              "tof": 24.0,
+              "dElev": 50.04,
+              "tofPer100m": -0.48
             },
             {
               "range": 1100,
-              "elevation": 1303,
-              "tof": 27.3,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1171,
+              "tof": 23.7,
+              "dElev": 52.73,
+              "tofPer100m": -0.53
+            },
+            {
+              "range": 1150,
+              "elevation": 1144,
+              "tof": 23.4,
+              "dElev": 56.01,
+              "tofPer100m": -0.6
             },
             {
               "range": 1200,
-              "elevation": 1272,
-              "tof": 27.1,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1115,
+              "tof": 23.1,
+              "dElev": 60.12,
+              "tofPer100m": -0.68
+            },
+            {
+              "range": 1250,
+              "elevation": 1084,
+              "tof": 22.8,
+              "dElev": 65.46,
+              "tofPer100m": -0.78
+            },
+            {
+              "range": 1300,
+              "elevation": 1050,
+              "tof": 22.3,
+              "dElev": 72.8,
+              "tofPer100m": -0.92
+            },
+            {
+              "range": 1350,
+              "elevation": 1011,
+              "tof": 21.8,
+              "dElev": 83.75,
+              "tofPer100m": -1.13
             },
             {
               "range": 1400,
-              "elevation": 1205,
-              "tof": 26.4,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 966,
+              "tof": 21.2,
+              "dElev": 103.06,
+              "tofPer100m": -1.48
+            },
+            {
+              "range": 1450,
+              "elevation": 908,
+              "tof": 20.4,
+              "dElev": 191.03,
+              "tofPer100m": -3.07
             },
             {
               "range": 1500,
-              "elevation": 1167,
-              "tof": 26.0,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 1600,
-              "elevation": 1127,
-              "tof": 25.5,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 1700,
-              "elevation": 1082,
-              "tof": 24.9,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 1800,
-              "elevation": 1029,
-              "tof": 24.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 775,
+              "tof": 18.1,
+              "dElev": 266.36,
+              "tofPer100m": -4.43
             }
           ]
         },
@@ -3517,71 +3545,204 @@
               "range": 100,
               "elevation": 12,
               "tof": 0.5,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -12.41,
+              "tofPer100m": 0.5
+            },
+            {
+              "range": 150,
+              "elevation": 18,
+              "tof": 0.7,
+              "dElev": -12.51,
+              "tofPer100m": 0.51
+            },
+            {
+              "range": 200,
+              "elevation": 25,
+              "tof": 1.0,
+              "dElev": -12.7,
+              "tofPer100m": 0.51
             },
             {
               "range": 250,
-              "elevation": 30,
-              "tof": 1.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 31,
+              "tof": 1.3,
+              "dElev": -12.91,
+              "tofPer100m": 0.52
+            },
+            {
+              "range": 300,
+              "elevation": 38,
+              "tof": 1.5,
+              "dElev": -13.12,
+              "tofPer100m": 0.52
+            },
+            {
+              "range": 350,
+              "elevation": 44,
+              "tof": 1.8,
+              "dElev": -13.33,
+              "tofPer100m": 0.53
             },
             {
               "range": 400,
-              "elevation": 48,
+              "elevation": 51,
               "tof": 2.0,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -13.56,
+              "tofPer100m": 0.54
+            },
+            {
+              "range": 450,
+              "elevation": 58,
+              "tof": 2.3,
+              "dElev": -13.79,
+              "tofPer100m": 0.54
+            },
+            {
+              "range": 500,
+              "elevation": 65,
+              "tof": 2.6,
+              "dElev": -14.02,
+              "tofPer100m": 0.55
             },
             {
               "range": 550,
-              "elevation": 66,
-              "tof": 2.7,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 72,
+              "tof": 2.9,
+              "dElev": -14.27,
+              "tofPer100m": 0.56
+            },
+            {
+              "range": 600,
+              "elevation": 79,
+              "tof": 3.2,
+              "dElev": -14.52,
+              "tofPer100m": 0.57
+            },
+            {
+              "range": 650,
+              "elevation": 86,
+              "tof": 3.4,
+              "dElev": -14.78,
+              "tofPer100m": 0.57
             },
             {
               "range": 700,
-              "elevation": 84,
-              "tof": 3.4,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 94,
+              "tof": 3.7,
+              "dElev": -15.05,
+              "tofPer100m": 0.58
+            },
+            {
+              "range": 750,
+              "elevation": 101,
+              "tof": 4.0,
+              "dElev": -15.34,
+              "tofPer100m": 0.59
+            },
+            {
+              "range": 800,
+              "elevation": 109,
+              "tof": 4.3,
+              "dElev": -15.63,
+              "tofPer100m": 0.6
             },
             {
               "range": 850,
-              "elevation": 102,
-              "tof": 4.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 117,
+              "tof": 4.6,
+              "dElev": -15.93,
+              "tofPer100m": 0.61
+            },
+            {
+              "range": 900,
+              "elevation": 125,
+              "tof": 4.9,
+              "dElev": -16.25,
+              "tofPer100m": 0.61
+            },
+            {
+              "range": 950,
+              "elevation": 133,
+              "tof": 5.2,
+              "dElev": -16.58,
+              "tofPer100m": 0.62
+            },
+            {
+              "range": 1000,
+              "elevation": 142,
+              "tof": 5.5,
+              "dElev": -16.92,
+              "tofPer100m": 0.63
             },
             {
               "range": 1050,
-              "elevation": 127,
-              "tof": 5.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 150,
+              "tof": 5.9,
+              "dElev": -17.28,
+              "tofPer100m": 0.64
+            },
+            {
+              "range": 1100,
+              "elevation": 159,
+              "tof": 6.2,
+              "dElev": -17.66,
+              "tofPer100m": 0.65
+            },
+            {
+              "range": 1150,
+              "elevation": 168,
+              "tof": 6.5,
+              "dElev": -18.06,
+              "tofPer100m": 0.66
             },
             {
               "range": 1200,
-              "elevation": 145,
-              "tof": 5.9,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 177,
+              "tof": 6.8,
+              "dElev": -18.47,
+              "tofPer100m": 0.67
+            },
+            {
+              "range": 1250,
+              "elevation": 186,
+              "tof": 7.2,
+              "dElev": -18.91,
+              "tofPer100m": 0.69
+            },
+            {
+              "range": 1300,
+              "elevation": 196,
+              "tof": 7.5,
+              "dElev": -19.37,
+              "tofPer100m": 0.7
             },
             {
               "range": 1350,
-              "elevation": 164,
-              "tof": 6.7,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 206,
+              "tof": 7.9,
+              "dElev": -19.86,
+              "tofPer100m": 0.71
             },
             {
-              "range": 1500,
-              "elevation": 183,
-              "tof": 7.5,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 1400,
+              "elevation": 216,
+              "tof": 8.2,
+              "dElev": -20.38,
+              "tofPer100m": 0.73
+            },
+            {
+              "range": 1450,
+              "elevation": 226,
+              "tof": 8.6,
+              "dElev": -20.88,
+              "tofPer100m": 0.74
+            },
+            {
+              "range": 1492,
+              "elevation": 235,
+              "tof": 8.9,
+              "dElev": -21.17,
+              "tofPer100m": 0.75
             }
           ]
         },
@@ -3591,92 +3752,162 @@
           "type": "HE",
           "variant": "indirect_fire",
           "charge": 2,
-          "minRange": 500,
-          "maxRange": 3921,
+          "minRange": 1500,
+          "maxRange": 2550,
           "ballisticTable": [
             {
-              "range": 500,
-              "elevation": 1540,
-              "tof": 41.6,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 1500,
+              "elevation": 1270,
+              "tof": 33.2,
+              "dElev": 26.71,
+              "tofPer100m": -0.29
             },
             {
-              "range": 800,
-              "elevation": 1504,
-              "tof": 41.5,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 1550,
+              "elevation": 1257,
+              "tof": 33.0,
+              "dElev": 27.0,
+              "tofPer100m": -0.3
             },
             {
-              "range": 1100,
-              "elevation": 1467,
-              "tof": 41.3,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 1600,
+              "elevation": 1243,
+              "tof": 32.9,
+              "dElev": 27.6,
+              "tofPer100m": -0.31
             },
             {
-              "range": 1400,
-              "elevation": 1430,
-              "tof": 41.1,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 1650,
+              "elevation": 1229,
+              "tof": 32.7,
+              "dElev": 28.26,
+              "tofPer100m": -0.33
             },
             {
               "range": 1700,
-              "elevation": 1391,
-              "tof": 40.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1215,
+              "tof": 32.5,
+              "dElev": 28.98,
+              "tofPer100m": -0.35
+            },
+            {
+              "range": 1750,
+              "elevation": 1200,
+              "tof": 32.3,
+              "dElev": 29.78,
+              "tofPer100m": -0.37
+            },
+            {
+              "range": 1800,
+              "elevation": 1185,
+              "tof": 32.2,
+              "dElev": 30.65,
+              "tofPer100m": -0.4
+            },
+            {
+              "range": 1850,
+              "elevation": 1169,
+              "tof": 31.9,
+              "dElev": 31.61,
+              "tofPer100m": -0.42
+            },
+            {
+              "range": 1900,
+              "elevation": 1153,
+              "tof": 31.7,
+              "dElev": 32.69,
+              "tofPer100m": -0.45
+            },
+            {
+              "range": 1950,
+              "elevation": 1137,
+              "tof": 31.5,
+              "dElev": 33.9,
+              "tofPer100m": -0.49
+            },
+            {
+              "range": 2000,
+              "elevation": 1119,
+              "tof": 31.2,
+              "dElev": 35.27,
+              "tofPer100m": -0.52
+            },
+            {
+              "range": 2050,
+              "elevation": 1101,
+              "tof": 31.0,
+              "dElev": 36.85,
+              "tofPer100m": -0.56
             },
             {
               "range": 2100,
-              "elevation": 1338,
-              "tof": 40.3,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1083,
+              "tof": 30.7,
+              "dElev": 38.67,
+              "tofPer100m": -0.61
+            },
+            {
+              "range": 2150,
+              "elevation": 1063,
+              "tof": 30.4,
+              "dElev": 40.82,
+              "tofPer100m": -0.67
+            },
+            {
+              "range": 2200,
+              "elevation": 1042,
+              "tof": 30.0,
+              "dElev": 43.41,
+              "tofPer100m": -0.73
+            },
+            {
+              "range": 2250,
+              "elevation": 1019,
+              "tof": 29.6,
+              "dElev": 46.61,
+              "tofPer100m": -0.81
+            },
+            {
+              "range": 2300,
+              "elevation": 995,
+              "tof": 29.2,
+              "dElev": 50.69,
+              "tofPer100m": -0.91
+            },
+            {
+              "range": 2350,
+              "elevation": 969,
+              "tof": 28.7,
+              "dElev": 56.17,
+              "tofPer100m": -1.05
             },
             {
               "range": 2400,
-              "elevation": 1295,
-              "tof": 39.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 939,
+              "tof": 28.2,
+              "dElev": 64.1,
+              "tofPer100m": -1.25
             },
             {
-              "range": 2700,
-              "elevation": 1251,
-              "tof": 39.3,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2450,
+              "elevation": 905,
+              "tof": 27.5,
+              "dElev": 77.25,
+              "tofPer100m": -1.57
             },
             {
-              "range": 3000,
-              "elevation": 1202,
-              "tof": 38.6,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2500,
+              "elevation": 862,
+              "tof": 26.6,
+              "dElev": 128.22,
+              "tofPer100m": -2.81
             },
             {
-              "range": 3300,
-              "elevation": 1149,
-              "tof": 37.7,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 3600,
-              "elevation": 1088,
-              "tof": 36.5,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 3900,
-              "elevation": 1012,
-              "tof": 34.9,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2550,
+              "elevation": 776,
+              "tof": 24.7,
+              "dElev": 170.79,
+              "tofPer100m": -3.84
             }
           ]
         },
@@ -3691,73 +3922,388 @@
           "ballisticTable": [
             {
               "range": 100,
-              "elevation": 6,
+              "elevation": 7,
               "tof": 0.4,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -6.66,
+              "tofPer100m": 0.37
+            },
+            {
+              "range": 150,
+              "elevation": 10,
+              "tof": 0.5,
+              "dElev": -6.72,
+              "tofPer100m": 0.37
+            },
+            {
+              "range": 200,
+              "elevation": 13,
+              "tof": 0.7,
+              "dElev": -6.82,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 250,
+              "elevation": 17,
+              "tof": 0.9,
+              "dElev": -6.92,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 300,
+              "elevation": 20,
+              "tof": 1.1,
+              "dElev": -7.03,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 350,
+              "elevation": 24,
+              "tof": 1.3,
+              "dElev": -7.15,
+              "tofPer100m": 0.39
             },
             {
               "range": 400,
-              "elevation": 26,
-              "tof": 1.4,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 27,
+              "tof": 1.5,
+              "dElev": -7.26,
+              "tofPer100m": 0.39
+            },
+            {
+              "range": 450,
+              "elevation": 31,
+              "tof": 1.7,
+              "dElev": -7.37,
+              "tofPer100m": 0.4
+            },
+            {
+              "range": 500,
+              "elevation": 35,
+              "tof": 1.9,
+              "dElev": -7.49,
+              "tofPer100m": 0.4
+            },
+            {
+              "range": 550,
+              "elevation": 38,
+              "tof": 2.1,
+              "dElev": -7.61,
+              "tofPer100m": 0.41
+            },
+            {
+              "range": 600,
+              "elevation": 42,
+              "tof": 2.3,
+              "dElev": -7.73,
+              "tofPer100m": 0.41
+            },
+            {
+              "range": 650,
+              "elevation": 46,
+              "tof": 2.5,
+              "dElev": -7.86,
+              "tofPer100m": 0.42
             },
             {
               "range": 700,
-              "elevation": 45,
-              "tof": 2.5,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 50,
+              "tof": 2.7,
+              "dElev": -7.99,
+              "tofPer100m": 0.42
+            },
+            {
+              "range": 750,
+              "elevation": 54,
+              "tof": 2.9,
+              "dElev": -8.12,
+              "tofPer100m": 0.43
+            },
+            {
+              "range": 800,
+              "elevation": 58,
+              "tof": 3.1,
+              "dElev": -8.25,
+              "tofPer100m": 0.43
+            },
+            {
+              "range": 850,
+              "elevation": 62,
+              "tof": 3.4,
+              "dElev": -8.39,
+              "tofPer100m": 0.44
+            },
+            {
+              "range": 900,
+              "elevation": 67,
+              "tof": 3.6,
+              "dElev": -8.53,
+              "tofPer100m": 0.44
+            },
+            {
+              "range": 950,
+              "elevation": 71,
+              "tof": 3.8,
+              "dElev": -8.67,
+              "tofPer100m": 0.45
             },
             {
               "range": 1000,
-              "elevation": 64,
-              "tof": 3.6,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 75,
+              "tof": 4.0,
+              "dElev": -8.82,
+              "tofPer100m": 0.45
+            },
+            {
+              "range": 1050,
+              "elevation": 80,
+              "tof": 4.3,
+              "dElev": -8.97,
+              "tofPer100m": 0.46
+            },
+            {
+              "range": 1100,
+              "elevation": 84,
+              "tof": 4.5,
+              "dElev": -9.13,
+              "tofPer100m": 0.46
+            },
+            {
+              "range": 1150,
+              "elevation": 89,
+              "tof": 4.7,
+              "dElev": -9.29,
+              "tofPer100m": 0.47
+            },
+            {
+              "range": 1200,
+              "elevation": 94,
+              "tof": 5.0,
+              "dElev": -9.45,
+              "tofPer100m": 0.48
+            },
+            {
+              "range": 1250,
+              "elevation": 98,
+              "tof": 5.2,
+              "dElev": -9.62,
+              "tofPer100m": 0.48
             },
             {
               "range": 1300,
-              "elevation": 84,
-              "tof": 4.7,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 103,
+              "tof": 5.4,
+              "dElev": -9.8,
+              "tofPer100m": 0.49
+            },
+            {
+              "range": 1350,
+              "elevation": 108,
+              "tof": 5.7,
+              "dElev": -9.98,
+              "tofPer100m": 0.5
+            },
+            {
+              "range": 1400,
+              "elevation": 113,
+              "tof": 5.9,
+              "dElev": -10.16,
+              "tofPer100m": 0.5
+            },
+            {
+              "range": 1450,
+              "elevation": 118,
+              "tof": 6.2,
+              "dElev": -10.35,
+              "tofPer100m": 0.51
+            },
+            {
+              "range": 1500,
+              "elevation": 124,
+              "tof": 6.4,
+              "dElev": -10.55,
+              "tofPer100m": 0.52
+            },
+            {
+              "range": 1550,
+              "elevation": 129,
+              "tof": 6.7,
+              "dElev": -10.75,
+              "tofPer100m": 0.52
             },
             {
               "range": 1600,
-              "elevation": 103,
-              "tof": 5.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 134,
+              "tof": 7.0,
+              "dElev": -10.95,
+              "tofPer100m": 0.53
+            },
+            {
+              "range": 1650,
+              "elevation": 140,
+              "tof": 7.2,
+              "dElev": -11.17,
+              "tofPer100m": 0.54
+            },
+            {
+              "range": 1700,
+              "elevation": 145,
+              "tof": 7.5,
+              "dElev": -11.39,
+              "tofPer100m": 0.55
+            },
+            {
+              "range": 1750,
+              "elevation": 151,
+              "tof": 7.8,
+              "dElev": -11.62,
+              "tofPer100m": 0.55
+            },
+            {
+              "range": 1800,
+              "elevation": 157,
+              "tof": 8.1,
+              "dElev": -11.86,
+              "tofPer100m": 0.56
+            },
+            {
+              "range": 1850,
+              "elevation": 163,
+              "tof": 8.3,
+              "dElev": -12.11,
+              "tofPer100m": 0.57
             },
             {
               "range": 1900,
-              "elevation": 123,
-              "tof": 6.9,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 169,
+              "tof": 8.6,
+              "dElev": -12.36,
+              "tofPer100m": 0.58
+            },
+            {
+              "range": 1950,
+              "elevation": 175,
+              "tof": 8.9,
+              "dElev": -12.63,
+              "tofPer100m": 0.59
+            },
+            {
+              "range": 2000,
+              "elevation": 182,
+              "tof": 9.2,
+              "dElev": -12.9,
+              "tofPer100m": 0.6
+            },
+            {
+              "range": 2050,
+              "elevation": 188,
+              "tof": 9.5,
+              "dElev": -13.19,
+              "tofPer100m": 0.61
+            },
+            {
+              "range": 2100,
+              "elevation": 195,
+              "tof": 9.8,
+              "dElev": -13.49,
+              "tofPer100m": 0.62
+            },
+            {
+              "range": 2150,
+              "elevation": 202,
+              "tof": 10.1,
+              "dElev": -13.81,
+              "tofPer100m": 0.63
             },
             {
               "range": 2200,
-              "elevation": 143,
-              "tof": 8.0,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 209,
+              "tof": 10.5,
+              "dElev": -14.13,
+              "tofPer100m": 0.64
+            },
+            {
+              "range": 2250,
+              "elevation": 216,
+              "tof": 10.8,
+              "dElev": -14.48,
+              "tofPer100m": 0.65
+            },
+            {
+              "range": 2300,
+              "elevation": 223,
+              "tof": 11.1,
+              "dElev": -14.84,
+              "tofPer100m": 0.66
+            },
+            {
+              "range": 2350,
+              "elevation": 231,
+              "tof": 11.4,
+              "dElev": -15.22,
+              "tofPer100m": 0.67
+            },
+            {
+              "range": 2400,
+              "elevation": 239,
+              "tof": 11.8,
+              "dElev": -15.62,
+              "tofPer100m": 0.69
+            },
+            {
+              "range": 2450,
+              "elevation": 246,
+              "tof": 12.1,
+              "dElev": -9.59,
+              "tofPer100m": 1.17
             },
             {
               "range": 2500,
-              "elevation": 163,
-              "tof": 9.1,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 248,
+              "tof": 12.9,
+              "dElev": 1.77,
+              "tofPer100m": 2.03
             },
             {
-              "range": 2800,
-              "elevation": 184,
-              "tof": 10.2,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2550,
+              "elevation": 245,
+              "tof": 14.2,
+              "dElev": 6.88,
+              "tofPer100m": 2.42
+            },
+            {
+              "range": 2600,
+              "elevation": 241,
+              "tof": 15.4,
+              "dElev": 6.88,
+              "tofPer100m": 2.42
+            },
+            {
+              "range": 2650,
+              "elevation": 238,
+              "tof": 16.6,
+              "dElev": 6.88,
+              "tofPer100m": 2.42
+            },
+            {
+              "range": 2700,
+              "elevation": 234,
+              "tof": 17.8,
+              "dElev": 6.88,
+              "tofPer100m": 2.42
+            },
+            {
+              "range": 2750,
+              "elevation": 231,
+              "tof": 19.0,
+              "dElev": 6.88,
+              "tofPer100m": 2.42
+            },
+            {
+              "range": 2777,
+              "elevation": 229,
+              "tof": 19.6,
+              "dElev": 6.88,
+              "tofPer100m": 2.42
             }
           ]
         },
@@ -3767,92 +4313,232 @@
           "type": "HE",
           "variant": "indirect_fire",
           "charge": 3,
-          "minRange": 500,
-          "maxRange": 7300,
+          "minRange": 2100,
+          "maxRange": 3650,
           "ballisticTable": [
             {
-              "range": 500,
-              "elevation": 1568,
-              "tof": 56.9,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2100,
+              "elevation": 1272,
+              "tof": 41.0,
+              "dElev": 18.92,
+              "tofPer100m": -0.24
             },
             {
-              "range": 1100,
-              "elevation": 1529,
-              "tof": 56.7,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2150,
+              "elevation": 1262,
+              "tof": 40.9,
+              "dElev": 19.06,
+              "tofPer100m": -0.25
             },
             {
-              "range": 1700,
-              "elevation": 1490,
-              "tof": 56.5,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2200,
+              "elevation": 1253,
+              "tof": 40.8,
+              "dElev": 19.34,
+              "tofPer100m": -0.26
+            },
+            {
+              "range": 2250,
+              "elevation": 1243,
+              "tof": 40.6,
+              "dElev": 19.64,
+              "tofPer100m": -0.27
+            },
+            {
+              "range": 2300,
+              "elevation": 1233,
+              "tof": 40.5,
+              "dElev": 19.96,
+              "tofPer100m": -0.28
+            },
+            {
+              "range": 2350,
+              "elevation": 1223,
+              "tof": 40.3,
+              "dElev": 20.3,
+              "tofPer100m": -0.29
             },
             {
               "range": 2400,
-              "elevation": 1444,
-              "tof": 56.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1213,
+              "tof": 40.2,
+              "dElev": 20.66,
+              "tofPer100m": -0.31
+            },
+            {
+              "range": 2450,
+              "elevation": 1202,
+              "tof": 40.0,
+              "dElev": 21.04,
+              "tofPer100m": -0.32
+            },
+            {
+              "range": 2500,
+              "elevation": 1192,
+              "tof": 39.9,
+              "dElev": 21.45,
+              "tofPer100m": -0.33
+            },
+            {
+              "range": 2550,
+              "elevation": 1181,
+              "tof": 39.7,
+              "dElev": 21.88,
+              "tofPer100m": -0.35
+            },
+            {
+              "range": 2600,
+              "elevation": 1170,
+              "tof": 39.5,
+              "dElev": 22.34,
+              "tofPer100m": -0.36
+            },
+            {
+              "range": 2650,
+              "elevation": 1159,
+              "tof": 39.3,
+              "dElev": 22.84,
+              "tofPer100m": -0.38
+            },
+            {
+              "range": 2700,
+              "elevation": 1147,
+              "tof": 39.1,
+              "dElev": 23.38,
+              "tofPer100m": -0.4
+            },
+            {
+              "range": 2750,
+              "elevation": 1135,
+              "tof": 38.9,
+              "dElev": 23.95,
+              "tofPer100m": -0.42
+            },
+            {
+              "range": 2800,
+              "elevation": 1123,
+              "tof": 38.7,
+              "dElev": 24.58,
+              "tofPer100m": -0.44
+            },
+            {
+              "range": 2850,
+              "elevation": 1111,
+              "tof": 38.5,
+              "dElev": 25.26,
+              "tofPer100m": -0.46
+            },
+            {
+              "range": 2900,
+              "elevation": 1098,
+              "tof": 38.3,
+              "dElev": 26.01,
+              "tofPer100m": -0.48
+            },
+            {
+              "range": 2950,
+              "elevation": 1085,
+              "tof": 38.0,
+              "dElev": 26.83,
+              "tofPer100m": -0.51
             },
             {
               "range": 3000,
-              "elevation": 1403,
-              "tof": 55.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1071,
+              "tof": 37.8,
+              "dElev": 27.74,
+              "tofPer100m": -0.54
+            },
+            {
+              "range": 3050,
+              "elevation": 1057,
+              "tof": 37.5,
+              "dElev": 28.75,
+              "tofPer100m": -0.57
+            },
+            {
+              "range": 3100,
+              "elevation": 1042,
+              "tof": 37.2,
+              "dElev": 29.89,
+              "tofPer100m": -0.61
+            },
+            {
+              "range": 3150,
+              "elevation": 1027,
+              "tof": 36.9,
+              "dElev": 31.19,
+              "tofPer100m": -0.65
+            },
+            {
+              "range": 3200,
+              "elevation": 1011,
+              "tof": 36.5,
+              "dElev": 32.68,
+              "tofPer100m": -0.69
+            },
+            {
+              "range": 3250,
+              "elevation": 994,
+              "tof": 36.2,
+              "dElev": 34.42,
+              "tofPer100m": -0.75
+            },
+            {
+              "range": 3300,
+              "elevation": 977,
+              "tof": 35.8,
+              "dElev": 36.48,
+              "tofPer100m": -0.81
+            },
+            {
+              "range": 3350,
+              "elevation": 958,
+              "tof": 35.4,
+              "dElev": 38.99,
+              "tofPer100m": -0.89
+            },
+            {
+              "range": 3400,
+              "elevation": 938,
+              "tof": 34.9,
+              "dElev": 42.12,
+              "tofPer100m": -0.98
+            },
+            {
+              "range": 3450,
+              "elevation": 916,
+              "tof": 34.4,
+              "dElev": 46.2,
+              "tofPer100m": -1.11
+            },
+            {
+              "range": 3500,
+              "elevation": 891,
+              "tof": 33.8,
+              "dElev": 51.84,
+              "tofPer100m": -1.28
+            },
+            {
+              "range": 3550,
+              "elevation": 864,
+              "tof": 33.1,
+              "dElev": 60.44,
+              "tofPer100m": -1.54
             },
             {
               "range": 3600,
-              "elevation": 1360,
-              "tof": 55.3,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 831,
+              "tof": 32.3,
+              "dElev": 76.45,
+              "tofPer100m": -2.02
             },
             {
-              "range": 4200,
-              "elevation": 1316,
-              "tof": 54.7,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 4800,
-              "elevation": 1269,
-              "tof": 53.9,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 5400,
-              "elevation": 1219,
-              "tof": 52.9,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 6100,
-              "elevation": 1153,
-              "tof": 51.5,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 6700,
-              "elevation": 1088,
-              "tof": 49.8,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 7300,
-              "elevation": 1005,
-              "tof": 47.5,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 3650,
+              "elevation": 787,
+              "tof": 31.1,
+              "dElev": 87.18,
+              "tofPer100m": -2.34
             }
           ]
         },
@@ -3869,71 +4555,624 @@
               "range": 100,
               "elevation": 4,
               "tof": 0.3,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -4.15,
+              "tofPer100m": 0.29
+            },
+            {
+              "range": 150,
+              "elevation": 6,
+              "tof": 0.4,
+              "dElev": -4.18,
+              "tofPer100m": 0.29
+            },
+            {
+              "range": 200,
+              "elevation": 8,
+              "tof": 0.6,
+              "dElev": -4.25,
+              "tofPer100m": 0.3
+            },
+            {
+              "range": 250,
+              "elevation": 10,
+              "tof": 0.7,
+              "dElev": -4.31,
+              "tofPer100m": 0.3
+            },
+            {
+              "range": 300,
+              "elevation": 13,
+              "tof": 0.9,
+              "dElev": -4.38,
+              "tofPer100m": 0.3
+            },
+            {
+              "range": 350,
+              "elevation": 15,
+              "tof": 1.0,
+              "dElev": -4.45,
+              "tofPer100m": 0.31
+            },
+            {
+              "range": 400,
+              "elevation": 17,
+              "tof": 1.2,
+              "dElev": -4.52,
+              "tofPer100m": 0.31
+            },
+            {
+              "range": 450,
+              "elevation": 19,
+              "tof": 1.3,
+              "dElev": -4.59,
+              "tofPer100m": 0.31
+            },
+            {
+              "range": 500,
+              "elevation": 22,
+              "tof": 1.5,
+              "dElev": -4.65,
+              "tofPer100m": 0.32
+            },
+            {
+              "range": 550,
+              "elevation": 24,
+              "tof": 1.7,
+              "dElev": -4.73,
+              "tofPer100m": 0.32
             },
             {
               "range": 600,
-              "elevation": 24,
-              "tof": 1.7,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 26,
+              "tof": 1.8,
+              "dElev": -4.81,
+              "tofPer100m": 0.32
+            },
+            {
+              "range": 650,
+              "elevation": 29,
+              "tof": 2.0,
+              "dElev": -4.88,
+              "tofPer100m": 0.33
+            },
+            {
+              "range": 700,
+              "elevation": 31,
+              "tof": 2.1,
+              "dElev": -4.96,
+              "tofPer100m": 0.33
+            },
+            {
+              "range": 750,
+              "elevation": 34,
+              "tof": 2.3,
+              "dElev": -5.04,
+              "tofPer100m": 0.34
+            },
+            {
+              "range": 800,
+              "elevation": 36,
+              "tof": 2.5,
+              "dElev": -5.12,
+              "tofPer100m": 0.34
+            },
+            {
+              "range": 850,
+              "elevation": 39,
+              "tof": 2.7,
+              "dElev": -5.2,
+              "tofPer100m": 0.34
+            },
+            {
+              "range": 900,
+              "elevation": 41,
+              "tof": 2.8,
+              "dElev": -5.28,
+              "tofPer100m": 0.35
+            },
+            {
+              "range": 950,
+              "elevation": 44,
+              "tof": 3.0,
+              "dElev": -5.37,
+              "tofPer100m": 0.35
+            },
+            {
+              "range": 1000,
+              "elevation": 47,
+              "tof": 3.2,
+              "dElev": -5.46,
+              "tofPer100m": 0.36
             },
             {
               "range": 1050,
-              "elevation": 42,
-              "tof": 3.0,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 50,
+              "tof": 3.4,
+              "dElev": -5.54,
+              "tofPer100m": 0.36
+            },
+            {
+              "range": 1100,
+              "elevation": 52,
+              "tof": 3.5,
+              "dElev": -5.64,
+              "tofPer100m": 0.36
+            },
+            {
+              "range": 1150,
+              "elevation": 55,
+              "tof": 3.7,
+              "dElev": -5.73,
+              "tofPer100m": 0.37
+            },
+            {
+              "range": 1200,
+              "elevation": 58,
+              "tof": 3.9,
+              "dElev": -5.82,
+              "tofPer100m": 0.37
+            },
+            {
+              "range": 1250,
+              "elevation": 61,
+              "tof": 4.1,
+              "dElev": -5.92,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 1300,
+              "elevation": 64,
+              "tof": 4.3,
+              "dElev": -6.02,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 1350,
+              "elevation": 67,
+              "tof": 4.5,
+              "dElev": -6.12,
+              "tofPer100m": 0.39
+            },
+            {
+              "range": 1400,
+              "elevation": 70,
+              "tof": 4.7,
+              "dElev": -6.22,
+              "tofPer100m": 0.39
+            },
+            {
+              "range": 1450,
+              "elevation": 73,
+              "tof": 4.9,
+              "dElev": -6.33,
+              "tofPer100m": 0.4
+            },
+            {
+              "range": 1500,
+              "elevation": 76,
+              "tof": 5.1,
+              "dElev": -6.43,
+              "tofPer100m": 0.4
             },
             {
               "range": 1550,
-              "elevation": 62,
-              "tof": 4.4,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 80,
+              "tof": 5.3,
+              "dElev": -6.55,
+              "tofPer100m": 0.41
+            },
+            {
+              "range": 1600,
+              "elevation": 83,
+              "tof": 5.5,
+              "dElev": -6.66,
+              "tofPer100m": 0.41
+            },
+            {
+              "range": 1650,
+              "elevation": 86,
+              "tof": 5.7,
+              "dElev": -6.77,
+              "tofPer100m": 0.42
+            },
+            {
+              "range": 1700,
+              "elevation": 90,
+              "tof": 5.9,
+              "dElev": -6.89,
+              "tofPer100m": 0.42
+            },
+            {
+              "range": 1750,
+              "elevation": 93,
+              "tof": 6.1,
+              "dElev": -7.02,
+              "tofPer100m": 0.43
+            },
+            {
+              "range": 1800,
+              "elevation": 97,
+              "tof": 6.3,
+              "dElev": -7.14,
+              "tofPer100m": 0.43
+            },
+            {
+              "range": 1850,
+              "elevation": 100,
+              "tof": 6.5,
+              "dElev": -7.26,
+              "tofPer100m": 0.44
+            },
+            {
+              "range": 1900,
+              "elevation": 104,
+              "tof": 6.7,
+              "dElev": -7.4,
+              "tofPer100m": 0.44
+            },
+            {
+              "range": 1950,
+              "elevation": 108,
+              "tof": 7.0,
+              "dElev": -7.53,
+              "tofPer100m": 0.45
+            },
+            {
+              "range": 2000,
+              "elevation": 112,
+              "tof": 7.2,
+              "dElev": -7.67,
+              "tofPer100m": 0.45
             },
             {
               "range": 2050,
-              "elevation": 82,
-              "tof": 5.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 115,
+              "tof": 7.4,
+              "dElev": -7.81,
+              "tofPer100m": 0.46
+            },
+            {
+              "range": 2100,
+              "elevation": 119,
+              "tof": 7.7,
+              "dElev": -7.95,
+              "tofPer100m": 0.47
+            },
+            {
+              "range": 2150,
+              "elevation": 123,
+              "tof": 7.9,
+              "dElev": -8.1,
+              "tofPer100m": 0.47
+            },
+            {
+              "range": 2200,
+              "elevation": 127,
+              "tof": 8.1,
+              "dElev": -8.25,
+              "tofPer100m": 0.48
+            },
+            {
+              "range": 2250,
+              "elevation": 132,
+              "tof": 8.4,
+              "dElev": -8.41,
+              "tofPer100m": 0.48
+            },
+            {
+              "range": 2300,
+              "elevation": 136,
+              "tof": 8.6,
+              "dElev": -8.57,
+              "tofPer100m": 0.49
+            },
+            {
+              "range": 2350,
+              "elevation": 140,
+              "tof": 8.9,
+              "dElev": -8.74,
+              "tofPer100m": 0.5
+            },
+            {
+              "range": 2400,
+              "elevation": 145,
+              "tof": 9.1,
+              "dElev": -8.91,
+              "tofPer100m": 0.51
+            },
+            {
+              "range": 2450,
+              "elevation": 149,
+              "tof": 9.4,
+              "dElev": -9.09,
+              "tofPer100m": 0.51
             },
             {
               "range": 2500,
-              "elevation": 101,
-              "tof": 7.1,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 154,
+              "tof": 9.6,
+              "dElev": -9.27,
+              "tofPer100m": 0.52
+            },
+            {
+              "range": 2550,
+              "elevation": 158,
+              "tof": 9.9,
+              "dElev": -9.46,
+              "tofPer100m": 0.53
+            },
+            {
+              "range": 2600,
+              "elevation": 163,
+              "tof": 10.2,
+              "dElev": -9.65,
+              "tofPer100m": 0.53
+            },
+            {
+              "range": 2650,
+              "elevation": 168,
+              "tof": 10.4,
+              "dElev": -9.85,
+              "tofPer100m": 0.54
+            },
+            {
+              "range": 2700,
+              "elevation": 173,
+              "tof": 10.7,
+              "dElev": -10.06,
+              "tofPer100m": 0.55
+            },
+            {
+              "range": 2750,
+              "elevation": 178,
+              "tof": 11.0,
+              "dElev": -10.28,
+              "tofPer100m": 0.56
+            },
+            {
+              "range": 2800,
+              "elevation": 183,
+              "tof": 11.3,
+              "dElev": -10.5,
+              "tofPer100m": 0.57
+            },
+            {
+              "range": 2850,
+              "elevation": 189,
+              "tof": 11.5,
+              "dElev": -10.73,
+              "tofPer100m": 0.58
+            },
+            {
+              "range": 2900,
+              "elevation": 194,
+              "tof": 11.8,
+              "dElev": -10.97,
+              "tofPer100m": 0.59
+            },
+            {
+              "range": 2950,
+              "elevation": 200,
+              "tof": 12.1,
+              "dElev": -11.23,
+              "tofPer100m": 0.6
             },
             {
               "range": 3000,
-              "elevation": 121,
-              "tof": 8.5,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 205,
+              "tof": 12.4,
+              "dElev": -11.48,
+              "tofPer100m": 0.61
+            },
+            {
+              "range": 3050,
+              "elevation": 211,
+              "tof": 12.7,
+              "dElev": -11.76,
+              "tofPer100m": 0.62
+            },
+            {
+              "range": 3100,
+              "elevation": 217,
+              "tof": 13.0,
+              "dElev": -12.04,
+              "tofPer100m": 0.63
+            },
+            {
+              "range": 3150,
+              "elevation": 223,
+              "tof": 13.4,
+              "dElev": -12.33,
+              "tofPer100m": 0.64
+            },
+            {
+              "range": 3200,
+              "elevation": 229,
+              "tof": 13.7,
+              "dElev": -12.64,
+              "tofPer100m": 0.65
+            },
+            {
+              "range": 3250,
+              "elevation": 236,
+              "tof": 14.0,
+              "dElev": -12.97,
+              "tofPer100m": 0.66
+            },
+            {
+              "range": 3300,
+              "elevation": 242,
+              "tof": 14.3,
+              "dElev": -13.31,
+              "tofPer100m": 0.67
+            },
+            {
+              "range": 3350,
+              "elevation": 249,
+              "tof": 14.7,
+              "dElev": -4.7,
+              "tofPer100m": 1.4
+            },
+            {
+              "range": 3400,
+              "elevation": 247,
+              "tof": 15.7,
+              "dElev": 5.46,
+              "tofPer100m": 2.22
+            },
+            {
+              "range": 3450,
+              "elevation": 244,
+              "tof": 16.9,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
             },
             {
               "range": 3500,
-              "elevation": 142,
-              "tof": 10.0,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 240,
+              "tof": 18.1,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3550,
+              "elevation": 237,
+              "tof": 19.2,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3600,
+              "elevation": 233,
+              "tof": 20.4,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3650,
+              "elevation": 230,
+              "tof": 21.6,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3700,
+              "elevation": 227,
+              "tof": 22.7,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3750,
+              "elevation": 223,
+              "tof": 23.9,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3800,
+              "elevation": 220,
+              "tof": 25.1,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3850,
+              "elevation": 216,
+              "tof": 26.2,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 3900,
+              "elevation": 213,
+              "tof": 27.4,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
             },
             {
               "range": 3950,
-              "elevation": 161,
-              "tof": 11.3,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 209,
+              "tof": 28.6,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4000,
+              "elevation": 206,
+              "tof": 29.7,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4050,
+              "elevation": 203,
+              "tof": 30.9,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4100,
+              "elevation": 199,
+              "tof": 32.1,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4150,
+              "elevation": 196,
+              "tof": 33.2,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4200,
+              "elevation": 192,
+              "tof": 34.4,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4250,
+              "elevation": 189,
+              "tof": 35.6,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4300,
+              "elevation": 186,
+              "tof": 36.7,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4350,
+              "elevation": 182,
+              "tof": 37.9,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4400,
+              "elevation": 179,
+              "tof": 39.1,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
             },
             {
               "range": 4450,
-              "elevation": 182,
-              "tof": 12.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 175,
+              "tof": 40.2,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
+            },
+            {
+              "range": 4458,
+              "elevation": 175,
+              "tof": 40.4,
+              "dElev": 6.84,
+              "tofPer100m": 2.33
             }
           ]
         },
@@ -3943,92 +5182,302 @@
           "type": "HE",
           "variant": "indirect_fire",
           "charge": 4,
-          "minRange": 500,
-          "maxRange": 11719,
+          "minRange": 2600,
+          "maxRange": 4650,
           "ballisticTable": [
             {
-              "range": 500,
-              "elevation": 1580,
-              "tof": 72.1,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2600,
+              "elevation": 1271,
+              "tof": 47.2,
+              "dElev": 15.29,
+              "tofPer100m": -0.23
             },
             {
-              "range": 1500,
-              "elevation": 1540,
-              "tof": 71.9,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2650,
+              "elevation": 1263,
+              "tof": 47.1,
+              "dElev": 15.38,
+              "tofPer100m": -0.23
             },
             {
-              "range": 2500,
-              "elevation": 1499,
-              "tof": 71.7,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 2700,
+              "elevation": 1255,
+              "tof": 47.0,
+              "dElev": 15.56,
+              "tofPer100m": -0.24
+            },
+            {
+              "range": 2750,
+              "elevation": 1248,
+              "tof": 46.9,
+              "dElev": 15.74,
+              "tofPer100m": -0.24
+            },
+            {
+              "range": 2800,
+              "elevation": 1240,
+              "tof": 46.7,
+              "dElev": 15.94,
+              "tofPer100m": -0.25
+            },
+            {
+              "range": 2850,
+              "elevation": 1232,
+              "tof": 46.6,
+              "dElev": 16.14,
+              "tofPer100m": -0.26
+            },
+            {
+              "range": 2900,
+              "elevation": 1224,
+              "tof": 46.5,
+              "dElev": 16.35,
+              "tofPer100m": -0.27
+            },
+            {
+              "range": 2950,
+              "elevation": 1215,
+              "tof": 46.3,
+              "dElev": 16.57,
+              "tofPer100m": -0.28
+            },
+            {
+              "range": 3000,
+              "elevation": 1207,
+              "tof": 46.2,
+              "dElev": 16.8,
+              "tofPer100m": -0.29
+            },
+            {
+              "range": 3050,
+              "elevation": 1199,
+              "tof": 46.0,
+              "dElev": 17.04,
+              "tofPer100m": -0.3
+            },
+            {
+              "range": 3100,
+              "elevation": 1190,
+              "tof": 45.9,
+              "dElev": 17.3,
+              "tofPer100m": -0.31
+            },
+            {
+              "range": 3150,
+              "elevation": 1181,
+              "tof": 45.7,
+              "dElev": 17.57,
+              "tofPer100m": -0.32
+            },
+            {
+              "range": 3200,
+              "elevation": 1172,
+              "tof": 45.6,
+              "dElev": 17.85,
+              "tofPer100m": -0.33
+            },
+            {
+              "range": 3250,
+              "elevation": 1163,
+              "tof": 45.4,
+              "dElev": 18.14,
+              "tofPer100m": -0.34
+            },
+            {
+              "range": 3300,
+              "elevation": 1154,
+              "tof": 45.2,
+              "dElev": 18.45,
+              "tofPer100m": -0.35
+            },
+            {
+              "range": 3350,
+              "elevation": 1145,
+              "tof": 45.1,
+              "dElev": 18.78,
+              "tofPer100m": -0.36
+            },
+            {
+              "range": 3400,
+              "elevation": 1136,
+              "tof": 44.9,
+              "dElev": 19.13,
+              "tofPer100m": -0.38
+            },
+            {
+              "range": 3450,
+              "elevation": 1126,
+              "tof": 44.7,
+              "dElev": 19.5,
+              "tofPer100m": -0.39
+            },
+            {
+              "range": 3500,
+              "elevation": 1116,
+              "tof": 44.5,
+              "dElev": 19.9,
+              "tofPer100m": -0.41
+            },
+            {
+              "range": 3550,
+              "elevation": 1106,
+              "tof": 44.3,
+              "dElev": 20.32,
+              "tofPer100m": -0.42
             },
             {
               "range": 3600,
-              "elevation": 1454,
-              "tof": 71.3,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1096,
+              "tof": 44.1,
+              "dElev": 20.77,
+              "tofPer100m": -0.44
+            },
+            {
+              "range": 3650,
+              "elevation": 1085,
+              "tof": 43.8,
+              "dElev": 21.25,
+              "tofPer100m": -0.46
+            },
+            {
+              "range": 3700,
+              "elevation": 1074,
+              "tof": 43.6,
+              "dElev": 21.77,
+              "tofPer100m": -0.48
+            },
+            {
+              "range": 3750,
+              "elevation": 1063,
+              "tof": 43.4,
+              "dElev": 22.33,
+              "tofPer100m": -0.5
+            },
+            {
+              "range": 3800,
+              "elevation": 1052,
+              "tof": 43.1,
+              "dElev": 22.94,
+              "tofPer100m": -0.52
+            },
+            {
+              "range": 3850,
+              "elevation": 1040,
+              "tof": 42.8,
+              "dElev": 23.61,
+              "tofPer100m": -0.54
+            },
+            {
+              "range": 3900,
+              "elevation": 1028,
+              "tof": 42.6,
+              "dElev": 24.34,
+              "tofPer100m": -0.57
+            },
+            {
+              "range": 3950,
+              "elevation": 1016,
+              "tof": 42.3,
+              "dElev": 25.14,
+              "tofPer100m": -0.6
+            },
+            {
+              "range": 4000,
+              "elevation": 1003,
+              "tof": 42.0,
+              "dElev": 26.04,
+              "tofPer100m": -0.63
+            },
+            {
+              "range": 4050,
+              "elevation": 990,
+              "tof": 41.6,
+              "dElev": 27.04,
+              "tofPer100m": -0.67
+            },
+            {
+              "range": 4100,
+              "elevation": 976,
+              "tof": 41.3,
+              "dElev": 28.17,
+              "tofPer100m": -0.71
+            },
+            {
+              "range": 4150,
+              "elevation": 962,
+              "tof": 40.9,
+              "dElev": 29.46,
+              "tofPer100m": -0.75
+            },
+            {
+              "range": 4200,
+              "elevation": 947,
+              "tof": 40.5,
+              "dElev": 30.95,
+              "tofPer100m": -0.81
+            },
+            {
+              "range": 4250,
+              "elevation": 931,
+              "tof": 40.1,
+              "dElev": 32.7,
+              "tofPer100m": -0.87
+            },
+            {
+              "range": 4300,
+              "elevation": 914,
+              "tof": 39.7,
+              "dElev": 34.81,
+              "tofPer100m": -0.94
+            },
+            {
+              "range": 4350,
+              "elevation": 896,
+              "tof": 39.2,
+              "dElev": 37.41,
+              "tofPer100m": -1.03
+            },
+            {
+              "range": 4400,
+              "elevation": 877,
+              "tof": 38.6,
+              "dElev": 40.72,
+              "tofPer100m": -1.15
+            },
+            {
+              "range": 4450,
+              "elevation": 855,
+              "tof": 38.0,
+              "dElev": 45.16,
+              "tofPer100m": -1.3
+            },
+            {
+              "range": 4500,
+              "elevation": 832,
+              "tof": 37.3,
+              "dElev": 51.6,
+              "tofPer100m": -1.53
+            },
+            {
+              "range": 4550,
+              "elevation": 804,
+              "tof": 36.5,
+              "dElev": 62.32,
+              "tofPer100m": -1.9
             },
             {
               "range": 4600,
-              "elevation": 1412,
-              "tof": 70.8,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 769,
+              "tof": 35.4,
+              "dElev": 88.53,
+              "tofPer100m": -2.81
             },
             {
-              "range": 5600,
-              "elevation": 1368,
-              "tof": 70.2,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 6600,
-              "elevation": 1323,
-              "tof": 69.4,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 7600,
-              "elevation": 1274,
-              "tof": 68.4,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 8700,
-              "elevation": 1217,
-              "tof": 67.0,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 9700,
-              "elevation": 1159,
-              "tof": 65.4,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 10700,
-              "elevation": 1092,
-              "tof": 63.3,
-              "dElev": null,
-              "tofPer100m": null
-            },
-            {
-              "range": 11700,
-              "elevation": 1007,
-              "tof": 60.2,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 4650,
+              "elevation": 715,
+              "tof": 33.7,
+              "dElev": 107.87,
+              "tofPer100m": -3.48
             }
           ]
         },
@@ -4045,71 +5494,904 @@
               "range": 100,
               "elevation": 3,
               "tof": 0.2,
-              "dElev": null,
-              "tofPer100m": null
+              "dElev": -2.82,
+              "tofPer100m": 0.24
+            },
+            {
+              "range": 150,
+              "elevation": 4,
+              "tof": 0.4,
+              "dElev": -2.85,
+              "tofPer100m": 0.24
+            },
+            {
+              "range": 200,
+              "elevation": 6,
+              "tof": 0.5,
+              "dElev": -2.9,
+              "tofPer100m": 0.24
+            },
+            {
+              "range": 250,
+              "elevation": 7,
+              "tof": 0.6,
+              "dElev": -2.94,
+              "tofPer100m": 0.25
+            },
+            {
+              "range": 300,
+              "elevation": 9,
+              "tof": 0.7,
+              "dElev": -2.98,
+              "tofPer100m": 0.25
+            },
+            {
+              "range": 350,
+              "elevation": 10,
+              "tof": 0.9,
+              "dElev": -3.03,
+              "tofPer100m": 0.25
+            },
+            {
+              "range": 400,
+              "elevation": 12,
+              "tof": 1.0,
+              "dElev": -3.08,
+              "tofPer100m": 0.26
+            },
+            {
+              "range": 450,
+              "elevation": 13,
+              "tof": 1.1,
+              "dElev": -3.13,
+              "tofPer100m": 0.26
+            },
+            {
+              "range": 500,
+              "elevation": 15,
+              "tof": 1.2,
+              "dElev": -3.17,
+              "tofPer100m": 0.26
+            },
+            {
+              "range": 550,
+              "elevation": 16,
+              "tof": 1.4,
+              "dElev": -3.22,
+              "tofPer100m": 0.26
+            },
+            {
+              "range": 600,
+              "elevation": 18,
+              "tof": 1.5,
+              "dElev": -3.28,
+              "tofPer100m": 0.27
+            },
+            {
+              "range": 650,
+              "elevation": 20,
+              "tof": 1.6,
+              "dElev": -3.33,
+              "tofPer100m": 0.27
+            },
+            {
+              "range": 700,
+              "elevation": 21,
+              "tof": 1.8,
+              "dElev": -3.38,
+              "tofPer100m": 0.27
+            },
+            {
+              "range": 750,
+              "elevation": 23,
+              "tof": 1.9,
+              "dElev": -3.43,
+              "tofPer100m": 0.28
             },
             {
               "range": 800,
-              "elevation": 22,
-              "tof": 1.9,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 25,
+              "tof": 2.0,
+              "dElev": -3.48,
+              "tofPer100m": 0.28
+            },
+            {
+              "range": 850,
+              "elevation": 26,
+              "tof": 2.2,
+              "dElev": -3.54,
+              "tofPer100m": 0.28
+            },
+            {
+              "range": 900,
+              "elevation": 28,
+              "tof": 2.3,
+              "dElev": -3.59,
+              "tofPer100m": 0.29
+            },
+            {
+              "range": 950,
+              "elevation": 30,
+              "tof": 2.5,
+              "dElev": -3.65,
+              "tofPer100m": 0.29
+            },
+            {
+              "range": 1000,
+              "elevation": 32,
+              "tof": 2.6,
+              "dElev": -3.71,
+              "tofPer100m": 0.29
+            },
+            {
+              "range": 1050,
+              "elevation": 34,
+              "tof": 2.8,
+              "dElev": -3.77,
+              "tofPer100m": 0.3
+            },
+            {
+              "range": 1100,
+              "elevation": 36,
+              "tof": 2.9,
+              "dElev": -3.83,
+              "tofPer100m": 0.3
+            },
+            {
+              "range": 1150,
+              "elevation": 38,
+              "tof": 3.1,
+              "dElev": -3.89,
+              "tofPer100m": 0.3
+            },
+            {
+              "range": 1200,
+              "elevation": 40,
+              "tof": 3.2,
+              "dElev": -3.96,
+              "tofPer100m": 0.31
+            },
+            {
+              "range": 1250,
+              "elevation": 42,
+              "tof": 3.4,
+              "dElev": -4.02,
+              "tofPer100m": 0.31
+            },
+            {
+              "range": 1300,
+              "elevation": 44,
+              "tof": 3.5,
+              "dElev": -4.09,
+              "tofPer100m": 0.31
+            },
+            {
+              "range": 1350,
+              "elevation": 46,
+              "tof": 3.7,
+              "dElev": -4.15,
+              "tofPer100m": 0.32
+            },
+            {
+              "range": 1400,
+              "elevation": 48,
+              "tof": 3.9,
+              "dElev": -4.22,
+              "tofPer100m": 0.32
+            },
+            {
+              "range": 1450,
+              "elevation": 50,
+              "tof": 4.0,
+              "dElev": -4.29,
+              "tofPer100m": 0.33
             },
             {
               "range": 1500,
-              "elevation": 41,
-              "tof": 3.5,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 52,
+              "tof": 4.2,
+              "dElev": -4.36,
+              "tofPer100m": 0.33
+            },
+            {
+              "range": 1550,
+              "elevation": 54,
+              "tof": 4.3,
+              "dElev": -4.44,
+              "tofPer100m": 0.33
+            },
+            {
+              "range": 1600,
+              "elevation": 56,
+              "tof": 4.5,
+              "dElev": -4.51,
+              "tofPer100m": 0.34
+            },
+            {
+              "range": 1650,
+              "elevation": 59,
+              "tof": 4.7,
+              "dElev": -4.58,
+              "tofPer100m": 0.34
+            },
+            {
+              "range": 1700,
+              "elevation": 61,
+              "tof": 4.9,
+              "dElev": -4.66,
+              "tofPer100m": 0.34
+            },
+            {
+              "range": 1750,
+              "elevation": 63,
+              "tof": 5.0,
+              "dElev": -4.73,
+              "tofPer100m": 0.35
+            },
+            {
+              "range": 1800,
+              "elevation": 66,
+              "tof": 5.2,
+              "dElev": -4.81,
+              "tofPer100m": 0.35
+            },
+            {
+              "range": 1850,
+              "elevation": 68,
+              "tof": 5.4,
+              "dElev": -4.9,
+              "tofPer100m": 0.36
+            },
+            {
+              "range": 1900,
+              "elevation": 71,
+              "tof": 5.6,
+              "dElev": -4.98,
+              "tofPer100m": 0.36
+            },
+            {
+              "range": 1950,
+              "elevation": 73,
+              "tof": 5.7,
+              "dElev": -5.06,
+              "tofPer100m": 0.37
+            },
+            {
+              "range": 2000,
+              "elevation": 76,
+              "tof": 5.9,
+              "dElev": -5.15,
+              "tofPer100m": 0.37
+            },
+            {
+              "range": 2050,
+              "elevation": 78,
+              "tof": 6.1,
+              "dElev": -5.24,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 2100,
+              "elevation": 81,
+              "tof": 6.3,
+              "dElev": -5.33,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 2150,
+              "elevation": 84,
+              "tof": 6.5,
+              "dElev": -5.42,
+              "tofPer100m": 0.38
+            },
+            {
+              "range": 2200,
+              "elevation": 86,
+              "tof": 6.7,
+              "dElev": -5.52,
+              "tofPer100m": 0.39
             },
             {
               "range": 2250,
-              "elevation": 62,
-              "tof": 5.3,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 89,
+              "tof": 6.9,
+              "dElev": -5.61,
+              "tofPer100m": 0.39
+            },
+            {
+              "range": 2300,
+              "elevation": 92,
+              "tof": 7.1,
+              "dElev": -5.71,
+              "tofPer100m": 0.4
+            },
+            {
+              "range": 2350,
+              "elevation": 95,
+              "tof": 7.3,
+              "dElev": -5.82,
+              "tofPer100m": 0.4
+            },
+            {
+              "range": 2400,
+              "elevation": 98,
+              "tof": 7.5,
+              "dElev": -5.92,
+              "tofPer100m": 0.41
+            },
+            {
+              "range": 2450,
+              "elevation": 101,
+              "tof": 7.7,
+              "dElev": -6.03,
+              "tofPer100m": 0.41
+            },
+            {
+              "range": 2500,
+              "elevation": 104,
+              "tof": 7.9,
+              "dElev": -6.13,
+              "tofPer100m": 0.42
+            },
+            {
+              "range": 2550,
+              "elevation": 107,
+              "tof": 8.1,
+              "dElev": -6.25,
+              "tofPer100m": 0.42
+            },
+            {
+              "range": 2600,
+              "elevation": 110,
+              "tof": 8.3,
+              "dElev": -6.36,
+              "tofPer100m": 0.43
+            },
+            {
+              "range": 2650,
+              "elevation": 113,
+              "tof": 8.5,
+              "dElev": -6.48,
+              "tofPer100m": 0.44
+            },
+            {
+              "range": 2700,
+              "elevation": 117,
+              "tof": 8.8,
+              "dElev": -6.59,
+              "tofPer100m": 0.44
+            },
+            {
+              "range": 2750,
+              "elevation": 120,
+              "tof": 9.0,
+              "dElev": -6.72,
+              "tofPer100m": 0.45
+            },
+            {
+              "range": 2800,
+              "elevation": 123,
+              "tof": 9.2,
+              "dElev": -6.85,
+              "tofPer100m": 0.45
+            },
+            {
+              "range": 2850,
+              "elevation": 127,
+              "tof": 9.4,
+              "dElev": -6.97,
+              "tofPer100m": 0.46
+            },
+            {
+              "range": 2900,
+              "elevation": 130,
+              "tof": 9.7,
+              "dElev": -7.11,
+              "tofPer100m": 0.46
             },
             {
               "range": 2950,
-              "elevation": 81,
-              "tof": 6.9,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 134,
+              "tof": 9.9,
+              "dElev": -7.25,
+              "tofPer100m": 0.47
+            },
+            {
+              "range": 3000,
+              "elevation": 138,
+              "tof": 10.1,
+              "dElev": -7.39,
+              "tofPer100m": 0.48
+            },
+            {
+              "range": 3050,
+              "elevation": 141,
+              "tof": 10.4,
+              "dElev": -7.53,
+              "tofPer100m": 0.48
+            },
+            {
+              "range": 3100,
+              "elevation": 145,
+              "tof": 10.6,
+              "dElev": -7.68,
+              "tofPer100m": 0.49
+            },
+            {
+              "range": 3150,
+              "elevation": 149,
+              "tof": 10.9,
+              "dElev": -7.83,
+              "tofPer100m": 0.5
+            },
+            {
+              "range": 3200,
+              "elevation": 153,
+              "tof": 11.1,
+              "dElev": -7.99,
+              "tofPer100m": 0.5
+            },
+            {
+              "range": 3250,
+              "elevation": 157,
+              "tof": 11.4,
+              "dElev": -8.15,
+              "tofPer100m": 0.51
+            },
+            {
+              "range": 3300,
+              "elevation": 161,
+              "tof": 11.6,
+              "dElev": -8.32,
+              "tofPer100m": 0.52
+            },
+            {
+              "range": 3350,
+              "elevation": 165,
+              "tof": 11.9,
+              "dElev": -8.49,
+              "tofPer100m": 0.53
+            },
+            {
+              "range": 3400,
+              "elevation": 170,
+              "tof": 12.1,
+              "dElev": -8.67,
+              "tofPer100m": 0.53
+            },
+            {
+              "range": 3450,
+              "elevation": 174,
+              "tof": 12.4,
+              "dElev": -8.86,
+              "tofPer100m": 0.54
+            },
+            {
+              "range": 3500,
+              "elevation": 178,
+              "tof": 12.7,
+              "dElev": -9.05,
+              "tofPer100m": 0.55
+            },
+            {
+              "range": 3550,
+              "elevation": 183,
+              "tof": 13.0,
+              "dElev": -9.25,
+              "tofPer100m": 0.56
+            },
+            {
+              "range": 3600,
+              "elevation": 188,
+              "tof": 13.2,
+              "dElev": -9.45,
+              "tofPer100m": 0.57
             },
             {
               "range": 3650,
-              "elevation": 100,
-              "tof": 8.6,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 192,
+              "tof": 13.5,
+              "dElev": -9.66,
+              "tofPer100m": 0.58
+            },
+            {
+              "range": 3700,
+              "elevation": 197,
+              "tof": 13.8,
+              "dElev": -9.88,
+              "tofPer100m": 0.59
+            },
+            {
+              "range": 3750,
+              "elevation": 202,
+              "tof": 14.1,
+              "dElev": -10.11,
+              "tofPer100m": 0.59
+            },
+            {
+              "range": 3800,
+              "elevation": 207,
+              "tof": 14.4,
+              "dElev": -10.35,
+              "tofPer100m": 0.6
+            },
+            {
+              "range": 3850,
+              "elevation": 213,
+              "tof": 14.7,
+              "dElev": -10.6,
+              "tofPer100m": 0.61
+            },
+            {
+              "range": 3900,
+              "elevation": 218,
+              "tof": 15.0,
+              "dElev": -10.86,
+              "tofPer100m": 0.63
+            },
+            {
+              "range": 3950,
+              "elevation": 224,
+              "tof": 15.3,
+              "dElev": -11.13,
+              "tofPer100m": 0.64
+            },
+            {
+              "range": 4000,
+              "elevation": 229,
+              "tof": 15.7,
+              "dElev": -11.41,
+              "tofPer100m": 0.65
+            },
+            {
+              "range": 4050,
+              "elevation": 235,
+              "tof": 16.0,
+              "dElev": -11.71,
+              "tofPer100m": 0.66
+            },
+            {
+              "range": 4100,
+              "elevation": 241,
+              "tof": 16.3,
+              "dElev": -12.02,
+              "tofPer100m": 0.67
+            },
+            {
+              "range": 4150,
+              "elevation": 247,
+              "tof": 16.7,
+              "dElev": -7.37,
+              "tofPer100m": 1.1
+            },
+            {
+              "range": 4200,
+              "elevation": 248,
+              "tof": 17.4,
+              "dElev": 2.19,
+              "tofPer100m": 1.91
+            },
+            {
+              "range": 4250,
+              "elevation": 245,
+              "tof": 18.6,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4300,
+              "elevation": 241,
+              "tof": 19.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
             },
             {
               "range": 4350,
-              "elevation": 120,
-              "tof": 10.2,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 238,
+              "tof": 20.9,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4400,
+              "elevation": 234,
+              "tof": 22.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4450,
+              "elevation": 231,
+              "tof": 23.2,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4500,
+              "elevation": 227,
+              "tof": 24.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4550,
+              "elevation": 224,
+              "tof": 25.5,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4600,
+              "elevation": 220,
+              "tof": 26.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4650,
+              "elevation": 217,
+              "tof": 27.8,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4700,
+              "elevation": 214,
+              "tof": 29.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4750,
+              "elevation": 210,
+              "tof": 30.1,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4800,
+              "elevation": 207,
+              "tof": 31.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4850,
+              "elevation": 203,
+              "tof": 32.4,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4900,
+              "elevation": 200,
+              "tof": 33.6,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 4950,
+              "elevation": 196,
+              "tof": 34.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5000,
+              "elevation": 193,
+              "tof": 35.9,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5050,
+              "elevation": 189,
+              "tof": 37.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
             },
             {
               "range": 5100,
+              "elevation": 186,
+              "tof": 38.2,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5150,
+              "elevation": 182,
+              "tof": 39.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5200,
+              "elevation": 179,
+              "tof": 40.5,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5250,
+              "elevation": 175,
+              "tof": 41.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5300,
+              "elevation": 172,
+              "tof": 42.8,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5350,
+              "elevation": 168,
+              "tof": 44.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5400,
+              "elevation": 165,
+              "tof": 45.1,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5450,
+              "elevation": 162,
+              "tof": 46.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5500,
+              "elevation": 158,
+              "tof": 47.4,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5550,
+              "elevation": 155,
+              "tof": 48.6,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5600,
+              "elevation": 151,
+              "tof": 49.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5650,
+              "elevation": 148,
+              "tof": 50.9,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5700,
+              "elevation": 144,
+              "tof": 52.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5750,
               "elevation": 141,
-              "tof": 12.0,
-              "dElev": null,
-              "tofPer100m": null
+              "tof": 53.2,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
             },
             {
               "range": 5800,
-              "elevation": 161,
-              "tof": 13.7,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 137,
+              "tof": 54.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5850,
+              "elevation": 134,
+              "tof": 55.5,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5900,
+              "elevation": 130,
+              "tof": 56.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 5950,
+              "elevation": 127,
+              "tof": 57.8,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6000,
+              "elevation": 123,
+              "tof": 59.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6050,
+              "elevation": 120,
+              "tof": 60.1,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6100,
+              "elevation": 116,
+              "tof": 61.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6150,
+              "elevation": 113,
+              "tof": 62.4,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6200,
+              "elevation": 109,
+              "tof": 63.6,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6250,
+              "elevation": 106,
+              "tof": 64.7,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6300,
+              "elevation": 103,
+              "tof": 65.9,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6350,
+              "elevation": 99,
+              "tof": 67.0,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6400,
+              "elevation": 96,
+              "tof": 68.2,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
+            },
+            {
+              "range": 6450,
+              "elevation": 92,
+              "tof": 69.3,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
             },
             {
               "range": 6500,
-              "elevation": 181,
-              "tof": 15.4,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 89,
+              "tof": 70.5,
+              "dElev": 6.94,
+              "tofPer100m": 2.31
             }
           ]
         },
@@ -4119,92 +6401,358 @@
           "type": "HE",
           "variant": "indirect_fire",
           "charge": 5,
-          "minRange": 500,
-          "maxRange": 17000,
+          "minRange": 3000,
+          "maxRange": 5450,
           "ballisticTable": [
             {
-              "range": 500,
-              "elevation": 1586,
-              "tof": 87.3,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 3000,
+              "elevation": 1271,
+              "tof": 52.2,
+              "dElev": 13.18,
+              "tofPer100m": -0.21
             },
             {
-              "range": 2000,
-              "elevation": 1545,
-              "tof": 87.1,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 3050,
+              "elevation": 1265,
+              "tof": 52.1,
+              "dElev": 13.25,
+              "tofPer100m": -0.22
+            },
+            {
+              "range": 3100,
+              "elevation": 1258,
+              "tof": 52.0,
+              "dElev": 13.37,
+              "tofPer100m": -0.22
+            },
+            {
+              "range": 3150,
+              "elevation": 1251,
+              "tof": 51.9,
+              "dElev": 13.51,
+              "tofPer100m": -0.23
+            },
+            {
+              "range": 3200,
+              "elevation": 1244,
+              "tof": 51.8,
+              "dElev": 13.64,
+              "tofPer100m": -0.23
+            },
+            {
+              "range": 3250,
+              "elevation": 1238,
+              "tof": 51.7,
+              "dElev": 13.78,
+              "tofPer100m": -0.24
+            },
+            {
+              "range": 3300,
+              "elevation": 1231,
+              "tof": 51.6,
+              "dElev": 13.93,
+              "tofPer100m": -0.25
+            },
+            {
+              "range": 3350,
+              "elevation": 1224,
+              "tof": 51.4,
+              "dElev": 14.08,
+              "tofPer100m": -0.25
+            },
+            {
+              "range": 3400,
+              "elevation": 1217,
+              "tof": 51.3,
+              "dElev": 14.24,
+              "tofPer100m": -0.26
+            },
+            {
+              "range": 3450,
+              "elevation": 1209,
+              "tof": 51.2,
+              "dElev": 14.4,
+              "tofPer100m": -0.27
             },
             {
               "range": 3500,
-              "elevation": 1504,
-              "tof": 86.9,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 1202,
+              "tof": 51.0,
+              "dElev": 14.57,
+              "tofPer100m": -0.28
+            },
+            {
+              "range": 3550,
+              "elevation": 1195,
+              "tof": 50.9,
+              "dElev": 14.74,
+              "tofPer100m": -0.28
+            },
+            {
+              "range": 3600,
+              "elevation": 1187,
+              "tof": 50.7,
+              "dElev": 14.92,
+              "tofPer100m": -0.29
+            },
+            {
+              "range": 3650,
+              "elevation": 1180,
+              "tof": 50.6,
+              "dElev": 15.11,
+              "tofPer100m": -0.3
+            },
+            {
+              "range": 3700,
+              "elevation": 1172,
+              "tof": 50.4,
+              "dElev": 15.31,
+              "tofPer100m": -0.31
+            },
+            {
+              "range": 3750,
+              "elevation": 1165,
+              "tof": 50.3,
+              "dElev": 15.52,
+              "tofPer100m": -0.32
+            },
+            {
+              "range": 3800,
+              "elevation": 1157,
+              "tof": 50.1,
+              "dElev": 15.73,
+              "tofPer100m": -0.33
+            },
+            {
+              "range": 3850,
+              "elevation": 1149,
+              "tof": 50.0,
+              "dElev": 15.96,
+              "tofPer100m": -0.34
+            },
+            {
+              "range": 3900,
+              "elevation": 1141,
+              "tof": 49.8,
+              "dElev": 16.2,
+              "tofPer100m": -0.35
+            },
+            {
+              "range": 3950,
+              "elevation": 1133,
+              "tof": 49.6,
+              "dElev": 16.44,
+              "tofPer100m": -0.36
+            },
+            {
+              "range": 4000,
+              "elevation": 1124,
+              "tof": 49.4,
+              "dElev": 16.7,
+              "tofPer100m": -0.37
+            },
+            {
+              "range": 4050,
+              "elevation": 1116,
+              "tof": 49.2,
+              "dElev": 16.97,
+              "tofPer100m": -0.38
+            },
+            {
+              "range": 4100,
+              "elevation": 1107,
+              "tof": 49.1,
+              "dElev": 17.26,
+              "tofPer100m": -0.39
+            },
+            {
+              "range": 4150,
+              "elevation": 1099,
+              "tof": 48.9,
+              "dElev": 17.56,
+              "tofPer100m": -0.4
+            },
+            {
+              "range": 4200,
+              "elevation": 1090,
+              "tof": 48.7,
+              "dElev": 17.88,
+              "tofPer100m": -0.42
+            },
+            {
+              "range": 4250,
+              "elevation": 1081,
+              "tof": 48.4,
+              "dElev": 18.22,
+              "tofPer100m": -0.43
+            },
+            {
+              "range": 4300,
+              "elevation": 1072,
+              "tof": 48.2,
+              "dElev": 18.58,
+              "tofPer100m": -0.45
+            },
+            {
+              "range": 4350,
+              "elevation": 1062,
+              "tof": 48.0,
+              "dElev": 18.96,
+              "tofPer100m": -0.46
+            },
+            {
+              "range": 4400,
+              "elevation": 1053,
+              "tof": 47.8,
+              "dElev": 19.37,
+              "tofPer100m": -0.48
+            },
+            {
+              "range": 4450,
+              "elevation": 1043,
+              "tof": 47.5,
+              "dElev": 19.81,
+              "tofPer100m": -0.5
+            },
+            {
+              "range": 4500,
+              "elevation": 1033,
+              "tof": 47.3,
+              "dElev": 20.28,
+              "tofPer100m": -0.52
+            },
+            {
+              "range": 4550,
+              "elevation": 1023,
+              "tof": 47.0,
+              "dElev": 20.78,
+              "tofPer100m": -0.54
+            },
+            {
+              "range": 4600,
+              "elevation": 1012,
+              "tof": 46.7,
+              "dElev": 21.33,
+              "tofPer100m": -0.56
+            },
+            {
+              "range": 4650,
+              "elevation": 1001,
+              "tof": 46.4,
+              "dElev": 21.92,
+              "tofPer100m": -0.58
+            },
+            {
+              "range": 4700,
+              "elevation": 990,
+              "tof": 46.1,
+              "dElev": 22.57,
+              "tofPer100m": -0.61
+            },
+            {
+              "range": 4750,
+              "elevation": 979,
+              "tof": 45.8,
+              "dElev": 23.28,
+              "tofPer100m": -0.64
+            },
+            {
+              "range": 4800,
+              "elevation": 967,
+              "tof": 45.5,
+              "dElev": 24.06,
+              "tofPer100m": -0.67
+            },
+            {
+              "range": 4850,
+              "elevation": 955,
+              "tof": 45.2,
+              "dElev": 24.94,
+              "tofPer100m": -0.7
+            },
+            {
+              "range": 4900,
+              "elevation": 942,
+              "tof": 44.8,
+              "dElev": 25.92,
+              "tofPer100m": -0.74
+            },
+            {
+              "range": 4950,
+              "elevation": 929,
+              "tof": 44.4,
+              "dElev": 27.03,
+              "tofPer100m": -0.78
             },
             {
               "range": 5000,
-              "elevation": 1462,
-              "tof": 86.5,
-              "dElev": null,
-              "tofPer100m": null
+              "elevation": 915,
+              "tof": 44.0,
+              "dElev": 28.3,
+              "tofPer100m": -0.83
             },
             {
-              "range": 6500,
-              "elevation": 1419,
-              "tof": 85.9,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5050,
+              "elevation": 900,
+              "tof": 43.6,
+              "dElev": 29.78,
+              "tofPer100m": -0.89
             },
             {
-              "range": 8000,
-              "elevation": 1375,
-              "tof": 85.1,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5100,
+              "elevation": 885,
+              "tof": 43.1,
+              "dElev": 31.53,
+              "tofPer100m": -0.96
             },
             {
-              "range": 9500,
-              "elevation": 1328,
-              "tof": 84.2,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5150,
+              "elevation": 869,
+              "tof": 42.6,
+              "dElev": 33.65,
+              "tofPer100m": -1.04
             },
             {
-              "range": 11000,
-              "elevation": 1279,
-              "tof": 83.0,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5200,
+              "elevation": 851,
+              "tof": 42.1,
+              "dElev": 36.28,
+              "tofPer100m": -1.14
             },
             {
-              "range": 12500,
-              "elevation": 1226,
-              "tof": 81.5,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5250,
+              "elevation": 833,
+              "tof": 41.5,
+              "dElev": 39.68,
+              "tofPer100m": -1.28
             },
             {
-              "range": 14000,
-              "elevation": 1168,
-              "tof": 79.5,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5300,
+              "elevation": 812,
+              "tof": 40.8,
+              "dElev": 44.34,
+              "tofPer100m": -1.46
             },
             {
-              "range": 15500,
-              "elevation": 1101,
-              "tof": 77.0,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5350,
+              "elevation": 788,
+              "tof": 40.0,
+              "dElev": 51.32,
+              "tofPer100m": -1.72
             },
             {
-              "range": 17000,
-              "elevation": 1017,
-              "tof": 73.4,
-              "dElev": null,
-              "tofPer100m": null
+              "range": 5400,
+              "elevation": 760,
+              "tof": 39.1,
+              "dElev": 63.84,
+              "tofPer100m": -2.21
+            },
+            {
+              "range": 5450,
+              "elevation": 724,
+              "tof": 37.8,
+              "dElev": 72.1,
+              "tofPer100m": -2.52
             }
           ]
         }

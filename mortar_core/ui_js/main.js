@@ -19,6 +19,7 @@ import * as Share from './share.js';
 import { setDisplay, populateSelect } from './utils.js';
 import * as DOMCache from './dom-cache.js';
 import * as CoordManager from './coord-manager.js';
+import { initLanguageSwitcher } from './i18n.js';
 
 // Keep version local to avoid import/export mismatch issues in cached clients
 const DATA_VERSION = '2.7.2';
@@ -201,6 +202,7 @@ async function init() {
         Corrections.setupCorrectionListeners();
         Corrections.setupDynamicListeners(); // Setup correction input listeners
         setupShareListeners();
+        initLanguageSwitcher();
         
         // Check URL for shared session (auto-load on page load)
         Share.checkURLForSharedSession();
